@@ -21,24 +21,38 @@
 
         <Button
             android:id="@+id/btnKysely"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
             android:layout_marginTop="50dp"
-            android:background="#01A9DB"
+            android:background="@drawable/round_buttons_blue"
+            android:bottomLeftRadius="10dp"
+            android:bottomRightRadius="10dp"
             android:text="Kysely"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#FFFFFF"
-            android:textSize="18sp" />
-
+            android:textSize="30sp"
+            android:topLeftRadius="10dp"
+            android:topRightRadius="10dp"
+            android:typeface="serif" />
 
         <Button
             android:id="@+id/btnRaportit"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
             android:layout_marginTop="50dp"
-            android:background="#86B404"
+            android:background="@drawable/round_buttons_green"
+            android:bottomLeftRadius="10dp"
+            android:bottomRightRadius="10dp"
+            android:fadingEdge="horizontal|vertical"
+            android:fadingEdgeLength="100dp"
             android:text="Tulokset"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#FFFFFF"
-            android:textSize="18sp" />
+            android:textSize="30sp"
+            android:topLeftRadius="10dp"
+            android:topRightRadius="10dp"
+            android:typeface="serif"
+            android:visibility="visible" />
     </LinearLayout>
 
 </RelativeLayout>
