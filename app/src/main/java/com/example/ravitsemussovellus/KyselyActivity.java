@@ -11,15 +11,45 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 public class KyselyActivity extends AppCompatActivity {
-
+    private Button btnuni, btnruoka, btnliikunta;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kysely);
+
+        this.btnuni = findViewById(R.id.btnuni);
+        this.btnruoka = findViewById(R.id.btnruoka);
+        this.btnliikunta = findViewById(R.id.btnliikunta);
+
+
+        // Buttoneiden OnClickListenerit
+
+        btnuni.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Uni / stressi activityn avaus tähän
+            }
+        });
+
+        btnruoka.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Ruoka activityn avaus tähän
+            }
+        });
+
+        btnliikunta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Liikunta activityn avaus tähän
+            }
+        });
+
 
 
         // add back arrow to toolbar

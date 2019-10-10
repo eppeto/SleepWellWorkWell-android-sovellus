@@ -24,14 +24,14 @@
 
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnuni"
             android:layout_width="215dp"
             android:layout_height="129dp"
             android:background="@drawable/round_buttons_blue"
-            android:text="Uni" />
+            android:text="Uni ja stressi" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btnruoka"
             android:layout_width="215dp"
             android:layout_height="129dp"
             android:layout_marginTop="20dp"
@@ -39,20 +39,12 @@
             android:text="Ruoka" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/btnliikunta"
             android:layout_width="215dp"
             android:layout_height="129dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/round_buttons_green"
             android:text="Liikunta" />
-
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="215dp"
-            android:layout_height="129dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/round_buttons_green"
-            android:text="Stressi" />
 
     </LinearLayout>
 
