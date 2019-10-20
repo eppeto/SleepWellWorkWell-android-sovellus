@@ -27,24 +27,60 @@
             android:id="@+id/btnuni"
             android:layout_width="215dp"
             android:layout_height="129dp"
-            android:background="@drawable/round_buttons_blue"
-            android:text="Uni ja stressi" />
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/round_buttons_kysely_1"
+            android:lineSpacingExtra="10sp"
+            android:text="Uni ja stressi"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="monospace" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="275dp"
+            android:layout_height="1dp"
+            android:background="#000000"
+            android:fadingEdge="horizontal|vertical"
+            android:gravity="center" />
 
         <Button
             android:id="@+id/btnruoka"
             android:layout_width="215dp"
             android:layout_height="129dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/round_buttons_green"
-            android:text="Ruoka" />
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/round_buttons_kysely_1"
+            android:lineSpacingExtra="10sp"
+            android:text="Ruoka"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="monospace" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="275dp"
+            android:layout_height="1dp"
+            android:background="#000000"
+            android:baselineAligned="false"
+            android:fadingEdge="horizontal|vertical"
+            android:gravity="center" />
 
         <Button
             android:id="@+id/btnliikunta"
             android:layout_width="215dp"
             android:layout_height="129dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/round_buttons_green"
-            android:text="Liikunta" />
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/round_buttons_kysely_1"
+            android:lineSpacingExtra="10sp"
+            android:text="Liikunta"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="monospace" />
 
     </LinearLayout>
 
