@@ -1,48 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-    <manifest package="com.example.ravitsemussovellus" xmlns:android="http://schemas.android.com/apk/res/android">
-
-
-    -<application android:theme="@style/AppTheme" android:supportsRtl="true" android:roundIcon="@mipmap/ic_launcher_round" android:label="@string/app_name" android:icon="@mipmap/ic_launcher" android:allowBackup="true">
-
-
-    -<activity android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" android:name=".SplashActivity">
-
-
-    -<intent-filter>
-
+<manifest package="com.example.ravitsemussovellus" xmlns:android="http://schemas.android.com/apk/res/android">
+    <application android:theme="@style/AppTheme" android:supportsRtl="true" android:roundIcon="@mipmap/ic_launcher_round" android:label="@string/app_name" android:icon="@mipmap/ic_launcher" android:allowBackup="true" android:screenOrientation="portrait">
+    <activity android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" android:name=".SplashActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN"/>
+            <category android:name="android.intent.category.LAUNCHER"/>
+        </intent-filter>
+    </activity>
+    <activity android:theme="@style/Theme.AppCompat.Light" android:label="@string/title_activity_kysely" android:name=".KyselyActivity" android:screenOrientation="portrait"/>
+    <activity android:name=".UniStressi"
+        android:screenOrientation="portrait"/>
+    <activity android:name=".Ruoka"
+        android:screenOrientation="portrait"/>
+    <activity android:name=".Liikunta"
+        android:screenOrientation="portrait"/>
+    <activity android:theme="@style/Theme.AppCompat.Light" android:label="@string/title_activity_raportit" android:name=".RaportitActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity"
+            >
+    <intent-filter>
     <action android:name="android.intent.action.MAIN"/>
-
     <category android:name="android.intent.category.LAUNCHER"/>
-
 </intent-filter>
-
 </activity>
-
-    <activity android:theme="@style/Theme.AppCompat.Light" android:label="@string/title_activity_kysely" android:name=".KyselyActivity"/>
-
-    <activity android:name=".UniStressi"/>
-
-    <activity android:name=".Ruoka"/>
-
-    <activity android:name=".Liikunta"/>
-
-    <activity android:theme="@style/Theme.AppCompat.Light" android:label="@string/title_activity_raportit" android:name=".RaportitActivity"/>
-
-
-    -<activity android:name=".MainActivity">
-
-
-    -<intent-filter>
-
-    <action android:name="android.intent.action.MAIN"/>
-
-    <category android:name="android.intent.category.LAUNCHER"/>
-
-</intent-filter>
-
-</activity>
-
 </application>
-
 </manifest>

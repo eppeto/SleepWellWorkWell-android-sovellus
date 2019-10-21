@@ -22,13 +22,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:text="Kuinka monta kuorallista söit marjoja/kasviksi/hedelmiä?"/>
+            android:layout_marginTop="100dp"
+            android:layout_marginLeft="50dp"
+            android:textSize="25dp"
+            android:text="Kuinka monta kuorallista söit marjoja/kasviksia/hedelmiä?"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
         <Button
             android:id="@+id/btnDecreament"
@@ -36,14 +37,18 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="50dp"
-            android:text="-" />
+            android:text="-"
+            android:textColor="#ffff"
+            android:textSize="30dp"
+            android:background="@drawable/round_buttons_kysely_1"
+            />
         <TextView
             android:id="@+id/tvCounter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="50dp"
-            android:textSize="50sp"
+            android:textSize="100sp"
             android:text="0"/>
         <Button
             android:id="@+id/btnIncreament"
@@ -51,8 +56,34 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="50dp"
-            android:text="+" />
+            android:text="+"
+            android:textColor="#ffff"
+            android:textSize="30dp"
+            android:background="@drawable/round_buttons_kysely_1"/>
     </LinearLayout>
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Lisää ateria"/>
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="50dp"
+            android:text="Lisää" />
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
+            android:layout_gravity="center"
+            android:background="@drawable/round_buttons_kysely_1"
+            android:textColor="#ffff"
+            android:text="Tallenna" />
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
