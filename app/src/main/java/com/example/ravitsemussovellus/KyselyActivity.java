@@ -1,5 +1,7 @@
 package com.example.ravitsemussovellus;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -26,39 +28,42 @@ public class KyselyActivity extends AppCompatActivity {
         this.btnruoka = findViewById(R.id.btnruoka);
         this.btnliikunta = findViewById(R.id.btnliikunta);
 
-
         // Buttoneiden OnClickListenerit
-
         btnuni.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Uni / stressi activityn avaus tähän
+                Intent myIntent = new Intent(getApplicationContext(),
+                        UniStressi.class);
+                startActivity(myIntent);
             }
         });
 
         btnruoka.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Ruoka activityn avaus tähän
-            }
+                    Intent myIntent = new Intent(getApplicationContext(),
+                            Ruoka.class);
+                    startActivity(myIntent);
+                }
+
         });
 
         btnliikunta.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                // Liikunta activityn avaus tähän
+        public void onClick(View v) {
+            Intent myIntent = new Intent(getApplicationContext(),
+                    Liikunta.class);
+            startActivity(myIntent);
             }
         });
-
-
 
         // add back arrow to toolbar
         if (getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
-
     }
+    
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // handle arrow click here

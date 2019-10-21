@@ -5,4 +5,18 @@
     <string name="tab_text_1">Päivänäkymä</string>
     <string name="tab_text_2">Viikkonäkymä</string>
     <string name="title_activity_kysely">Kysely</string>
+
+    <string name="title_activity_unistressi">UniStressi</string>
+
+    <string-array name="uni_arvot">
+        <item>Huono</item>
+        <item>Kohtalainen</item>
+        <item>Hyvä</item>
+    </string-array>
+
+    <string-array name="stressi_arvot">
+        <item>Huono</item>
+        <item>Kohtalainen</item>
+        <item>Hyvä</item>
+    </string-array>
 </resources>
