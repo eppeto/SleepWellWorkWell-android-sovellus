@@ -25,7 +25,7 @@
             android:layout_marginTop="100dp"
             android:layout_marginLeft="50dp"
             android:textSize="25dp"
-            android:text="Kuinka monta kuorallista söit marjoja/kasviksia/hedelmiä?"/>
+            android:text="Kuinka monta kourallista söit marjoja/kasviksia/hedelmiä?"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
