@@ -1,6 +1,7 @@
 package com.example.ravitsemussovellus;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -8,6 +9,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -32,18 +34,48 @@ public class KyselyActivity extends AppCompatActivity {
         btnuni.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(getApplicationContext(),
+                /*Intent myIntent = new Intent(getApplicationContext(),
                         UniStressi.class);
-                startActivity(myIntent);
+                startActivity(myIntent);*/
+                AlertDialog.Builder builder = new AlertDialog.Builder(KyselyActivity.this);
+                builder.setMessage("Palaa alkuun")
+                        .setPositiveButton("Kyllä", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                finish();
+                                dialogInterface.dismiss();
+                            }
+                        })
+                        .setNegativeButton("Ei", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.dismiss();
+                            }
+                        }).show();
             }
         });
 
         btnruoka.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    Intent myIntent = new Intent(getApplicationContext(),
+                    /*Intent myIntent = new Intent(getApplicationContext(),
                             Ruoka.class);
-                    startActivity(myIntent);
+                    startActivity(myIntent);*/
+                AlertDialog.Builder builder = new AlertDialog.Builder(KyselyActivity.this);
+                builder.setMessage("Palaa alkuun")
+                        .setPositiveButton("Kyllä", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                finish();
+                                dialogInterface.dismiss();
+                            }
+                        })
+                        .setNegativeButton("Ei", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.dismiss();
+                            }
+                        }).show();
                 }
 
         });
@@ -51,9 +83,24 @@ public class KyselyActivity extends AppCompatActivity {
         btnliikunta.setOnClickListener(new View.OnClickListener() {
             @Override
         public void onClick(View v) {
-            Intent myIntent = new Intent(getApplicationContext(),
+            /*Intent myIntent = new Intent(getApplicationContext(),
                     Liikunta.class);
-            startActivity(myIntent);
+            startActivity(myIntent);*/
+                AlertDialog.Builder builder = new AlertDialog.Builder(KyselyActivity.this);
+                builder.setMessage("Palaa alkuun")
+                        .setPositiveButton("Kyllä", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                finish();
+                                dialogInterface.dismiss();
+                            }
+                        })
+                        .setNegativeButton("Ei", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.dismiss();
+                            }
+                        }).show();
             }
         });
 
