@@ -19,11 +19,13 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:colorBackground">@color/colorBackground</item>
     </style>
-    <!-- Base application theme. -->
+    <!-- Dialogi teemat -->
     <style name="AppDialogTheme" parent="Theme.AppCompat.Light.Dialog">
-        <!-- Customize your theme here. -->
+        <!-- tarkemmat tyylimäärittelyt -->
         <item name="windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
+        <item name="android:windowMinWidthMajor">97%</item>
+        <item name="android:windowMinWidthMinor">97%</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
