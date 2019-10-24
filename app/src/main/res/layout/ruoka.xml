@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
@@ -11,13 +10,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-            android:textSize="25dp"
+            android:textSize="15dp"
             android:text="Kuinka monta kourallista söit marjoja/kasviksia/hedelmiä?"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_gravity="center"
         android:orientation="horizontal">
         <Button
             android:id="@+id/btnDecreament"
@@ -34,27 +33,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="100sp"
+            android:textSize="50sp"
             android:text="0"/>
         <Button
             android:id="@+id/btnIncreament"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-
             android:text="+"
             android:textColor="#ffff"
             android:textSize="20dp"
             android:background="@drawable/round_buttons_kysely_1"/>
     </LinearLayout>
 
-        <Button
-            android:id="@+id/btnSave"
-            android:layout_width="match_parent"
+        <TimePicker
+            android:id="@+id/timePicker"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/round_buttons_kysely_1"
-            android:textColor="#ffff"
-            android:text="Tallenna" />
+            android:timePickerMode="spinner"/>
+        <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tallenna" />
     </LinearLayout>
 </RelativeLayout>
 

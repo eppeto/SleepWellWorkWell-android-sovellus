@@ -9,11 +9,16 @@
     </activity>
     <activity android:theme="@style/Theme.AppCompat.Light" android:label="@string/title_activity_kysely" android:name=".KyselyActivity" android:screenOrientation="portrait"/>
     <activity android:name=".UniStressi"
-        android:screenOrientation="portrait"/>
+        android:screenOrientation="portrait"
+        android:label="Uni ja Stressi"
+        android:theme="@style/AppDialogTheme"/>
     <activity android:name=".Ruoka"
-        android:screenOrientation="portrait"/>
+        android:screenOrientation="portrait"
+        android:label="Ruoka"
+        android:theme="@style/AppDialogTheme"/>
+        //yläpuolella Activityn dialogitoteutus
     <activity android:name=".Liikunta"
-        android:screenOrientation="portrait"/>
+        android:screenOrientation="portrait" />
     <activity android:theme="@style/Theme.AppCompat.Light" android:label="@string/title_activity_raportit" android:name=".RaportitActivity" android:screenOrientation="portrait"/>
         <activity android:name=".MainActivity" android:screenOrientation="portrait"
             >

@@ -4,45 +4,56 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Calendar;
+
 public class Ruoka extends AppCompatActivity {
-    TextView tvCounter;
+    TextView tvCounter, tvTime;
     Button btnIncreament;
     Button btnDecreament;
     int counter = 0;
+    TimePicker timepicker;
+    private Calendar calendar;
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.ruoka);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.ruoka);
+        this.setFinishOnTouchOutside(false);
 
-            tvCounter = findViewById(R.id.tvCounter);
-            btnIncreament = findViewById(R.id.btnIncreament);
-            btnDecreament = findViewById(R.id.btnDecreament);
+        tvCounter = findViewById(R.id.tvCounter);
+        btnIncreament = findViewById(R.id.btnIncreament);
+        btnDecreament = findViewById(R.id.btnDecreament);
+        timepicker = (TimePicker) findViewById(R.id.timePicker);
 
-            tvCounter.setText("0");
+        //Kasvikset/marjat/hedelmät counter
+        tvCounter.setText("0");
 
-            btnIncreament.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+        btnIncreament.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-                    counter = counter + 1;
-                    tvCounter.setText(String.valueOf(counter));
-                    }
+                counter = counter + 1;
+                tvCounter.setText(String.valueOf(counter));
+            }
 
-            });
+        });
 
-            btnDecreament.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                if(counter>0){
+        btnDecreament.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (counter > 0) {
                     counter = counter - 1;
                     tvCounter.setText(String.valueOf(counter));
                 }
             }
-            });
+        });
+        //timepicker
+        timepicker.setIs24HourView(true);
 
-        }
     }
+
+}

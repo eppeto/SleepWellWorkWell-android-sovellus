@@ -17,10 +17,11 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class KyselyActivity extends AppCompatActivity {
     private Button btnuni, btnruoka, btnliikunta;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,60 +33,24 @@ public class KyselyActivity extends AppCompatActivity {
         this.btnliikunta = findViewById(R.id.btnliikunta);
 
         // Buttoneiden OnClickListenerit
+
         btnuni.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*Intent myIntent = new Intent(getApplicationContext(),
+                Intent myIntent = new Intent(getApplicationContext(),
                         UniStressi.class);
                 startActivity(myIntent);
-                AlertDialog.Builder builder = new AlertDialog.Builder(KyselyActivity.this);
-                builder.setMessage("Palaa alkuun")
-                        .setPositiveButton("Kyllä", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                finish();
-                                dialogInterface.dismiss();
-                            }
-                        })
-                        .setNegativeButton("Ei", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                dialogInterface.dismiss();
-                            }
-                        }).show();*/
-                final Dialog builder = new Dialog(KyselyActivity.this);
-                builder.setContentView(R.layout.unistressi);
-                builder.show();
             }
         });
 
         btnruoka.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    /*Intent myIntent = new Intent(getApplicationContext(),
-                            Ruoka.class);
-                    startActivity(myIntent);
-                AlertDialog.Builder builder = new AlertDialog.Builder(KyselyActivity.this);
-                builder.setMessage("Palaa alkuun")
-                        .setPositiveButton("Kyllä", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                finish();
-                                dialogInterface.dismiss();
-                            }
-                        })
-                        .setNegativeButton("Ei", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                dialogInterface.dismiss();
-                            }
-                        }).show();
-
-                     */
-                final Dialog builder = new Dialog(KyselyActivity.this);
-                builder.setContentView(R.layout.ruoka);
-                builder.show();
-                }
+                //Ruoka activityn avaus dialogimuodossa
+                Intent myIntent = new Intent(getApplicationContext(),
+                        Ruoka.class);
+                startActivity(myIntent);
+            }
 
         });
 
@@ -95,8 +60,8 @@ public class KyselyActivity extends AppCompatActivity {
             /*Intent myIntent = new Intent(getApplicationContext(),
                     Liikunta.class);
             startActivity(myIntent);*/
-                final Dialog builder = new Dialog(KyselyActivity.this);
-                builder.setContentView(R.layout.liikunta);
+                    final Dialog builder = new Dialog(KyselyActivity.this);
+                    builder.setContentView(R.layout.liikunta);
                 /*builder.setMessage("Palaa alkuun")
                         .setPositiveButton("Kyllä", new DialogInterface.OnClickListener() {
                             @Override
@@ -111,8 +76,8 @@ public class KyselyActivity extends AppCompatActivity {
                                 dialogInterface.dismiss();
                             }
                         }).show();*/
-                builder.show();
-            }
+                    builder.show();
+                }
         });
 
         // add back arrow to toolbar
