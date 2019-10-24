@@ -27,11 +27,33 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:text="Unen laatu" />
-        <Spinner
-            android:id="@+id/spinner1"
+        <RadioGroup
+            android:id="@+id/radioGroupUni"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/uni_arvot" />
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/RbtnHuonoUni"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="checkButton"
+                android:text="huono"/>
+
+            <RadioButton
+                android:id="@+id/RbtnHyvaUni"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="checkButton"
+                android:text="hyvä"/>
+
+            <RadioButton
+                android:id="@+id/RbtnErinUni"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="checkButton"
+                android:text="erinomainen"/>
+
+        </RadioGroup>
 
         <TextView
             android:id="@+id/editTextStressi"
@@ -40,11 +62,33 @@
             android:layout_margin="20dp"
             android:text="Stressitaso" />
 
-        <Spinner
-            android:id="@+id/spinner2"
+        <RadioGroup
+            android:id="@+id/radioGroupStressi"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/stressi_arvot" />
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/RbtnHuonoStressi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="checkButton"
+                android:text="huono"/>
+
+            <RadioButton
+                android:id="@+id/RbtnHyvaStressi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="checkButton"
+                android:text="hyvä"/>
+
+            <RadioButton
+                android:id="@+id/RbtnErinStressi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="checkButton"
+                android:text="erinomainen"/>
+
+        </RadioGroup>
 
         <Button
             android:id="@+id/btnUniStressi"

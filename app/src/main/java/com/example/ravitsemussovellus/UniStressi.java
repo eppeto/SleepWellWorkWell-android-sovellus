@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -16,8 +18,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class UniStressi extends AppCompatActivity {
 
     private Button btnUniStressi;
-    private Spinner spinner1,spinner2;
-
+    RadioGroup radioGroup;
+    RadioButton radioButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,9 +27,27 @@ public class UniStressi extends AppCompatActivity {
         setContentView(R.layout.unistressi);
 
         this.btnUniStressi = findViewById(R.id.btnUniStressi);
-        this.spinner1 = findViewById(R.id.spinner1);
+        radioGroup = findViewById(R.id.radioGroupUni);
+        radioGroup = findViewById(R.id.radioGroupStressi);
 
-        this.spinner2 = findViewById(R.id.spinner2);
+        Button buttonUniStressi = findViewById(R.id.btnUniStressi);
+        buttonUniStressi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int radioId=radioGroup.getCheckedRadioButtonId();
+
+                radioButton = findViewById(radioId);
+
+
+            }
+        });
+
+    }
+    public void checkButton (View v){
+        int radioId=radioGroup.getCheckedRadioButtonId();
+
+        radioButton = findViewById(radioId);
+
 
 
     }
