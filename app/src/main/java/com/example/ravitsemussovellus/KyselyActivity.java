@@ -1,6 +1,7 @@
 package com.example.ravitsemussovellus;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -36,7 +37,7 @@ public class KyselyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 /*Intent myIntent = new Intent(getApplicationContext(),
                         UniStressi.class);
-                startActivity(myIntent);*/
+                startActivity(myIntent);
                 AlertDialog.Builder builder = new AlertDialog.Builder(KyselyActivity.this);
                 builder.setMessage("Palaa alkuun")
                         .setPositiveButton("Kyllä", new DialogInterface.OnClickListener() {
@@ -51,7 +52,10 @@ public class KyselyActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 dialogInterface.dismiss();
                             }
-                        }).show();
+                        }).show();*/
+                final Dialog builder = new Dialog(KyselyActivity.this);
+                builder.setContentView(R.layout.unistressi);
+                builder.show();
             }
         });
 
@@ -60,7 +64,7 @@ public class KyselyActivity extends AppCompatActivity {
             public void onClick(View v) {
                     /*Intent myIntent = new Intent(getApplicationContext(),
                             Ruoka.class);
-                    startActivity(myIntent);*/
+                    startActivity(myIntent);
                 AlertDialog.Builder builder = new AlertDialog.Builder(KyselyActivity.this);
                 builder.setMessage("Palaa alkuun")
                         .setPositiveButton("Kyllä", new DialogInterface.OnClickListener() {
@@ -76,6 +80,11 @@ public class KyselyActivity extends AppCompatActivity {
                                 dialogInterface.dismiss();
                             }
                         }).show();
+
+                     */
+                final Dialog builder = new Dialog(KyselyActivity.this);
+                builder.setContentView(R.layout.ruoka);
+                builder.show();
                 }
 
         });
@@ -86,8 +95,9 @@ public class KyselyActivity extends AppCompatActivity {
             /*Intent myIntent = new Intent(getApplicationContext(),
                     Liikunta.class);
             startActivity(myIntent);*/
-                AlertDialog.Builder builder = new AlertDialog.Builder(KyselyActivity.this);
-                builder.setMessage("Palaa alkuun")
+                final Dialog builder = new Dialog(KyselyActivity.this);
+                builder.setContentView(R.layout.liikunta);
+                /*builder.setMessage("Palaa alkuun")
                         .setPositiveButton("Kyllä", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
@@ -100,7 +110,8 @@ public class KyselyActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 dialogInterface.dismiss();
                             }
-                        }).show();
+                        }).show();*/
+                builder.show();
             }
         });
 
