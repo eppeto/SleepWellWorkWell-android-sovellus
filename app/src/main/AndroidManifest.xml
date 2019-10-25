@@ -10,11 +10,11 @@
     <activity android:theme="@style/Theme.AppCompat.Light" android:label="@string/title_activity_kysely" android:name=".KyselyActivity" android:screenOrientation="portrait"/>
     <activity android:name=".UniStressi"
         android:screenOrientation="portrait"
-        android:label="Uni ja Stressi"
+        android:label="Lisää uni ja stressi tiedot"
         android:theme="@style/AppDialogTheme"/>
     <activity android:name=".Ruoka"
         android:screenOrientation="portrait"
-        android:label="Ruoka"
+        android:label="Lisää uusi ruokailu"
         android:theme="@style/AppDialogTheme"/>
     <activity android:name=".Liikunta"
         android:screenOrientation="portrait" />

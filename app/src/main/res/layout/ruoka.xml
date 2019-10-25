@@ -9,10 +9,24 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvMeal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:text="Valitse ajankohta"/>
+        <TimePicker
+            android:id="@+id/timePicker"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:timePickerMode="spinner"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
+            android:gravity="center"
             android:text="Kuinka monta kourallista söit marjoja/kasviksia/hedelmiä?"/>
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,7 +41,7 @@
             android:layout_gravity="center"
             android:text="-"
             android:textColor="#ffff"
-            android:textSize="30dp"
+            android:textSize="20dp"
             android:background="@drawable/round_buttons_kysely_2" />
         <TextView
             android:id="@+id/tvCounter"
@@ -35,6 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textSize="30sp"
+            android:layout_margin="20dp"
             android:text="0"/>
         <Button
             android:id="@+id/btnIncreament"
@@ -43,36 +58,22 @@
             android:layout_gravity="center"
             android:text="+"
             android:textColor="#ffff"
-            android:textSize="20dp"
+            android:textSize="12dp"
             android:background="@drawable/round_buttons_kysely_2"/>
     </LinearLayout>
-        <TextView
-            android:id="@+id/tvMeal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textSize="20dp"
-            android:text="Valitse ajankohta"/>
-        <TimePicker
-            android:id="@+id/timePicker"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:timePickerMode="spinner"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="bottom|center"
+        android:layout_margin="40dp"
         android:orientation="horizontal">
         <Button
         android:id="@+id/btnSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tallenna" />
-        <Button
-            android:id="@+id/btnCancel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Peruuta" />
+
     </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
