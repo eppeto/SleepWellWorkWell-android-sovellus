@@ -16,7 +16,6 @@
         android:screenOrientation="portrait"
         android:label="Ruoka"
         android:theme="@style/AppDialogTheme"/>
-        //yläpuolella Activityn dialogitoteutus
     <activity android:name=".Liikunta"
         android:screenOrientation="portrait" />
     <activity android:theme="@style/Theme.AppCompat.Light" android:label="@string/title_activity_raportit" android:name=".RaportitActivity" android:screenOrientation="portrait"/>
