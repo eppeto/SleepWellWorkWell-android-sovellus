@@ -34,6 +34,7 @@ public class KyselyActivity extends AppCompatActivity {
 
         // Buttoneiden OnClickListenerit
 
+        // Uni / Stressi
         btnuni.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -42,6 +43,8 @@ public class KyselyActivity extends AppCompatActivity {
                 startActivity(myIntent);
             }
         });
+
+        // Ruokailu
 
         btnruoka.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,14 +57,16 @@ public class KyselyActivity extends AppCompatActivity {
 
         });
 
+        // Liikunta
+
         btnliikunta.setOnClickListener(new View.OnClickListener() {
             @Override
         public void onClick(View v) {
-            /*Intent myIntent = new Intent(getApplicationContext(),
+            Intent myIntent = new Intent(getApplicationContext(),
                     Liikunta.class);
-            startActivity(myIntent);*/
-                    final Dialog builder = new Dialog(KyselyActivity.this);
-                    builder.setContentView(R.layout.liikunta);
+            startActivity(myIntent);
+                    /*final Dialog builder = new Dialog(KyselyActivity.this);
+                    builder.setContentView(R.layout.liikunta);*/
                 /*builder.setMessage("Palaa alkuun")
                         .setPositiveButton("Kyllä", new DialogInterface.OnClickListener() {
                             @Override
@@ -76,7 +81,7 @@ public class KyselyActivity extends AppCompatActivity {
                                 dialogInterface.dismiss();
                             }
                         }).show();*/
-                    builder.show();
+                    /*builder.show();*/
                 }
         });
 
