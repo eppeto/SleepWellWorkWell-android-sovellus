@@ -2,9 +2,95 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-<TextView
-    android:id="@+id/tv"
-    android:text=""
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"/>/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        // Harjoituksen tyyppi teksti ja buttonit layout
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/harjoituksentyyppi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Harjoituksen tyyppi" />
+            // kestävyys togglebutton
+            <ToggleButton
+                android:id="@+id/toggleButton"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textOff="Kestävyys"
+                android:textOn="Kestävyys" />
+            // Lihasvoima togglebutton
+            <ToggleButton
+                android:id="@+id/toggleButton2"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textOff="Lihasvoima"
+                android:textOn="Lihasvoima" />
+            // Liikkuvuus togglebutton
+            <ToggleButton
+                android:id="@+id/toggleButton3"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textOff="Liikkuvuus"
+                android:textOn="Liikkuvuus" />
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/harjoituksenkesto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Harjoituksen kesto" />
+
+            // Liikunnan keston tuntien ja minuuttien valinta
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+                //tunnit
+                <NumberPicker
+                    android:id="@+id/hourpicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                //minuutit
+                <NumberPicker
+                    android:id="@+id/minutepicker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btntallenna"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Tallenna" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
 </RelativeLayout>
