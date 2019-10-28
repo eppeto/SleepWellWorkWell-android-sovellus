@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -23,31 +24,56 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Harjoituksen tyyppi" />
+                android:text="Harjoituksen tyyppi"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:typeface="monospace"
+                app:fontFamily="monospace" />
             // kestävyys togglebutton
+
             <ToggleButton
                 android:id="@+id/tbtnkestavyys"
-                android:layout_width="250dp"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/round_buttons_secondary"
+                android:textColor="#FFFFFF"
                 android:textOff="Kestävyys"
-                android:textOn="Kestävyys" />
+                android:textOn="Kestävyys"
+                android:textStyle="bold"
+                android:typeface="monospace" />
             // Lihasvoima togglebutton
+
             <ToggleButton
                 android:id="@+id/tbtnlihasvoima"
-                android:layout_width="250dp"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/round_buttons_secondary"
+                android:textColor="#FFFFFF"
                 android:textOff="Lihasvoima"
-                android:textOn="Lihasvoima" />
+                android:textOn="Lihasvoima"
+                android:textStyle="bold"
+                android:typeface="monospace" />
             // Liikkuvuus togglebutton
+
             <ToggleButton
                 android:id="@+id/tbtnliikkuvuus"
-                android:layout_width="250dp"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/round_buttons_secondary"
+                android:textColor="#FFFFFF"
                 android:textOff="Liikkuvuus"
-                android:textOn="Liikkuvuus" />
+                android:textOn="Liikkuvuus"
+                android:textStyle="bold"
+                android:typeface="monospace" />
 
             <View
                 android:id="@+id/divider3"
@@ -61,7 +87,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
-                android:text="Harjoituksen kesto" />
+                android:text="Harjoituksen kesto"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:typeface="monospace"
+                app:fontFamily="monospace" />
 
             // Liikunnan keston tuntien ja minuuttien valinta
             <LinearLayout
@@ -74,32 +104,47 @@
                     android:id="@+id/hourpicker"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
+
                 <TextView
                     android:id="@+id/tuntia"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Tuntia" />
+                    android:text="Tuntia"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace"
+                    app:fontFamily="monospace" />
                 //minuutit
                 <NumberPicker
                     android:id="@+id/minutepicker"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
+
                 <TextView
                     android:id="@+id/minuuttia"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Minuuttia" />
+                    android:text="Minuuttia"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace"
+                    app:fontFamily="monospace" />
 
             </LinearLayout>
 
             <Button
                 android:id="@+id/btntallenna"
-                android:layout_width="match_parent"
+                android:layout_width="185dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Tallenna" />
+                android:layout_marginTop="30dp"
+                android:background="@drawable/round_buttons_secondary"
+                android:text="Tallenna"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="monospace" />
 
 
         </LinearLayout>

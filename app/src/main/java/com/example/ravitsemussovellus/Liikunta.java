@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.ToggleButton;
 import android.widget.Toast;
 
+import androidx.annotation.ColorInt;
+import androidx.annotation.ColorRes;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Liikunta extends AppCompatActivity {
@@ -32,8 +34,14 @@ public class Liikunta extends AppCompatActivity {
                 if (isChecked) {
                     tbtnlihasvoima.setChecked(false);
                     tbtnliikkuvuus.setChecked(false);
+                    // tausta vaihdetaan
+                    tbtnkestavyys.setPadding(5,5,5,5);
+                    tbtnkestavyys.setBackground(getResources().getDrawable(R.drawable.round_buttons_green));
                 } else {
                     // The toggle is disabled
+                    // tausta vaihdetaan takaisin
+                    tbtnkestavyys.setPadding(0,0,0,0);
+                    tbtnkestavyys.setBackground(getResources().getDrawable(R.drawable.round_buttons_secondary));
                 }
             }
         });
@@ -43,8 +51,14 @@ public class Liikunta extends AppCompatActivity {
                 if (isChecked) {
                     tbtnkestavyys.setChecked(false);
                     tbtnliikkuvuus.setChecked(false);
+                    // tausta vaihdetaan
+                    tbtnlihasvoima.setPadding(5,5,5,5);
+                    tbtnlihasvoima.setBackground(getResources().getDrawable(R.drawable.round_buttons_green));
                 } else {
                     // The toggle is disabled
+                    // tausta vaihdetaan takaisin
+                    tbtnlihasvoima.setPadding(0,0,0,0);
+                    tbtnlihasvoima.setBackground(getResources().getDrawable(R.drawable.round_buttons_secondary));
                 }
             }
         });
@@ -55,8 +69,14 @@ public class Liikunta extends AppCompatActivity {
                 if (isChecked) {
                     tbtnlihasvoima.setChecked(false);
                     tbtnkestavyys.setChecked(false);
+                    // tausta vaihdetaan
+                    tbtnliikkuvuus.setPadding(5,5,5,5);
+                    tbtnliikkuvuus.setBackground(getResources().getDrawable(R.drawable.round_buttons_green));
                 } else {
                     // The toggle is disabled
+                    // tausta vaihdetaan takaisin
+                    tbtnliikkuvuus.setPadding(0,0,0,0);
+                    tbtnliikkuvuus.setBackground(getResources().getDrawable(R.drawable.round_buttons_secondary));
                 }
             }
         });

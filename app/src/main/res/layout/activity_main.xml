@@ -31,9 +31,10 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
+            android:textStyle="bold"
             android:topLeftRadius="10dp"
             android:topRightRadius="10dp"
-            android:typeface="serif" />
+            android:typeface="monospace" />
 
         <Button
             android:id="@+id/btnRaportit"
@@ -49,9 +50,10 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
+            android:textStyle="bold"
             android:topLeftRadius="10dp"
             android:topRightRadius="10dp"
-            android:typeface="serif"
+            android:typeface="monospace"
             android:visibility="visible" />
     </LinearLayout>
 
