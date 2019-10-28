@@ -17,7 +17,9 @@
         android:label="Lisää uusi ruokailu"
         android:theme="@style/AppDialogTheme"/>
     <activity android:name=".Liikunta"
-        android:screenOrientation="portrait" />
+        android:screenOrientation="portrait"
+        android:label="Lisää uusi harjoitus"
+        android:theme="@style/AppDialogTheme"/>
     <activity android:theme="@style/Theme.AppCompat.Light" android:label="@string/title_activity_raportit" android:name=".RaportitActivity" android:screenOrientation="portrait"/>
         <activity android:name=".MainActivity" android:screenOrientation="portrait"
             >
