@@ -18,7 +18,7 @@
             android:layout_margin="20dp"
             android:layout_marginLeft="200dp"
             android:text="Unen laatu"
-            android:textSize="24sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:typeface="monospace"
             app:fontFamily="monospace" />
@@ -69,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:text="Stressitaso"
-            android:textSize="24sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:typeface="monospace"
             app:fontFamily="monospace" />

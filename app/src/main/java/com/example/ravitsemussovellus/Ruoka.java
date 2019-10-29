@@ -41,7 +41,7 @@ public class Ruoka extends AppCompatActivity {
 
             }
         });
-        
+
         //Kasvikset/marjat/hedelmät counter
         tvCounter.setText("0");
 
