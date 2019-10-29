@@ -37,10 +37,13 @@ public class UniStressi extends AppCompatActivity {
                 int radioId=radioGroup.getCheckedRadioButtonId();
 
                 radioButton = findViewById(radioId);
+                String text = "Tiedot Tallennettu";
+                Toast.makeText(UniStressi.this, text, Toast.LENGTH_SHORT).show();
 
 
             }
         });
+
 
     }
     public void checkButton (View v){

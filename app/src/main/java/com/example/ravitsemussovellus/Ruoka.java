@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +15,7 @@ public class Ruoka extends AppCompatActivity {
     TextView tvCounter, tvTime;
     Button btnIncreament;
     Button btnDecreament;
+    Button btnSave;
     int counter = 0;
     TimePicker timepicker;
     private Calendar calendar;
@@ -28,7 +30,18 @@ public class Ruoka extends AppCompatActivity {
         btnIncreament = findViewById(R.id.btnIncreament);
         btnDecreament = findViewById(R.id.btnDecreament);
         timepicker = (TimePicker) findViewById(R.id.timePicker);
+        btnSave = findViewById(R.id.btnSave);
 
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String text = "Tiedot Tallennettu";
+                Toast.makeText(Ruoka.this, text, Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        
         //Kasvikset/marjat/hedelmät counter
         tvCounter.setText("0");
 
@@ -51,9 +64,12 @@ public class Ruoka extends AppCompatActivity {
                 }
             }
         });
+
+
         //timepicker
         timepicker.setIs24HourView(true);
 
     }
+
 
 }
