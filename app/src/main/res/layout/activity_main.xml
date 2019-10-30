@@ -41,7 +41,7 @@
             android:layout_width="300dp"
             android:layout_height="150dp"
             android:layout_marginTop="50dp"
-            android:background="@drawable/round_buttons_green"
+            android:background="@drawable/round_buttons_blue"
             android:bottomLeftRadius="10dp"
             android:bottomRightRadius="10dp"
             android:fadingEdge="horizontal|vertical"
