@@ -5,11 +5,25 @@
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="monospace"
+            app:fontFamily="monospace"
+            android:inputType="date" />
+
 
         <TextView
             android:id="@+id/editTextUni"
@@ -29,13 +43,13 @@
             android:layout_height="150dp">
 
             <RadioButton
-                android:id="@+id/RbtnHuonoUni"
+                android:id="@+id/RbtnErinUni"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="checkButton"
-                android:text="huono"
-                android:textColor="#FF0000"
-                android:textSize="24sp"
+                android:text="Erinomainen"
+                android:textColor="#4CAF50"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 android:typeface="monospace" />
 
@@ -44,22 +58,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="checkButton"
-                android:text="hyvä"
+                android:text="Hyvä"
                 android:textColor="#CDDC39"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 android:typeface="monospace" />
 
             <RadioButton
-                android:id="@+id/RbtnErinUni"
+                android:id="@+id/RbtnHuonoUni"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="checkButton"
-                android:text="erinomainen"
-                android:textColor="#4CAF50"
-                android:textSize="24sp"
+                android:text="Huono"
+                android:textColor="#FF0000"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 android:typeface="monospace" />
+
 
         </RadioGroup>
 
@@ -68,7 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:text="Stressitaso"
+            android:text="Stressin määrä"
             android:textSize="18sp"
             android:textStyle="bold"
             android:typeface="monospace"
@@ -80,13 +95,13 @@
             android:layout_height="150dp">
 
             <RadioButton
-                android:id="@+id/RbtnHuonoStressi"
+                android:id="@+id/RbtnErinStressi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="checkButton"
-                android:text="huono"
-                android:textColor="#FF0000"
-                android:textSize="24sp"
+                android:text="Ei ollenkaan"
+                android:textColor="#4CAF50"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 android:typeface="monospace" />
 
@@ -95,20 +110,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="checkButton"
-                android:text="hyvä"
+                android:text="Sopiva"
                 android:textColor="#CDDC39"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 android:typeface="monospace" />
 
             <RadioButton
-                android:id="@+id/RbtnErinStressi"
+                android:id="@+id/RbtnHuonoStressi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="checkButton"
-                android:text="erinomainen"
-                android:textColor="#4CAF50"
-                android:textSize="24sp"
+                android:text="Liikaa"
+                android:textColor="#FF0000"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 android:typeface="monospace" />
 
@@ -126,7 +141,5 @@
             android:textStyle="bold"
             android:typeface="monospace" />
 
-
     </LinearLayout>
-
 </RelativeLayout>

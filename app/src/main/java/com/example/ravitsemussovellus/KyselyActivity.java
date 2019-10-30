@@ -17,12 +17,13 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class KyselyActivity extends AppCompatActivity {
-    private Button btnuni, btnruoka, btnliikunta;
 
+    Button btnuni, btnliikunta, btnruoka;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
