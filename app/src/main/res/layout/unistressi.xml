@@ -54,33 +54,36 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="checkButton"
-                android:text="Erinomainen"
+                android:text="Erinomainen  "
                 android:textColor="#4CAF50"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:typeface="monospace" />
+                android:typeface="monospace"
+                android:drawableRight="@drawable/good"/>
 
             <RadioButton
                 android:id="@+id/RbtnHyvaUni"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="checkButton"
-                android:text="Hyvä"
+                android:text="Hyvä         "
                 android:textColor="#CDDC39"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:typeface="monospace" />
+                android:typeface="monospace"
+                android:drawableRight="@drawable/neutral"/>
 
             <RadioButton
                 android:id="@+id/RbtnHuonoUni"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="checkButton"
-                android:text="Huono"
+                android:text="Huono        "
                 android:textColor="#FF0000"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:typeface="monospace" />
+                android:typeface="monospace"
+                android:drawableRight="@drawable/bad"/>
 
         </RadioGroup>
 
@@ -105,33 +108,36 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="checkButton"
-                android:text="Ei ollenkaan"
+                android:text="Ei ollenkaan "
                 android:textColor="#4CAF50"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:typeface="monospace" />
+                android:typeface="monospace"
+                android:drawableRight="@drawable/good"/>
 
             <RadioButton
                 android:id="@+id/RbtnHyvaStressi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="checkButton"
-                android:text="Sopiva"
+                android:text="Sopiva       "
                 android:textColor="#CDDC39"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:typeface="monospace" />
+                android:typeface="monospace"
+                android:drawableRight="@drawable/neutral"/>
 
             <RadioButton
                 android:id="@+id/RbtnHuonoStressi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="checkButton"
-                android:text="Liikaa"
+                android:text="Liikaa       "
                 android:textColor="#FF0000"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:typeface="monospace" />
+                android:typeface="monospace"
+                android:drawableRight="@drawable/bad"/>
 
         </RadioGroup>
 
