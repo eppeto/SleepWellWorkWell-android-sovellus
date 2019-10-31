@@ -25,7 +25,6 @@ public class UniStressi extends AppCompatActivity {
     private Button btnUniStressi;
     RadioGroup radioGroup;
     RadioButton radioButton;
-    TextView textViewDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +34,6 @@ public class UniStressi extends AppCompatActivity {
         btnUniStressi = findViewById(R.id.btnUniStressi);
         radioGroup = findViewById(R.id.radioGroupUni);
         radioGroup = findViewById(R.id.radioGroupStressi);
-        textViewDate =findViewById(R.id.textViewDate);
 
         Button buttonUniStressi = findViewById(R.id.btnUniStressi);
         buttonUniStressi.setOnClickListener(new View.OnClickListener() {
@@ -53,7 +51,6 @@ public class UniStressi extends AppCompatActivity {
     Calendar calendar=Calendar.getInstance();
     SimpleDateFormat simpleDateFormat= new SimpleDateFormat("dd-MM-yyy");
     String dateTime = simpleDateFormat.format(calendar.getTime());
-    textViewDate.setText(dateTime);
 
     }
     public void checkButton (View v){
