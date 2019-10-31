@@ -11,6 +11,15 @@
         android:gravity="center"
         android:orientation="vertical">
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="135dp"
+            android:layout_marginTop="15dp"
+            android:clickable="true"
+            app:srcCompat="@android:drawable/ic_dialog_info" />
+
         <TextView
             android:id="@+id/textViewDate"
             android:layout_width="wrap_content"
@@ -38,7 +47,7 @@
         <RadioGroup
             android:id="@+id/radioGroupUni"
             android:layout_width="295dp"
-            android:layout_height="150dp">
+            android:layout_height="110dp">
 
             <RadioButton
                 android:id="@+id/RbtnErinUni"
@@ -89,7 +98,7 @@
         <RadioGroup
             android:id="@+id/radioGroupStressi"
             android:layout_width="295dp"
-            android:layout_height="150dp">
+            android:layout_height="110dp">
 
             <RadioButton
                 android:id="@+id/RbtnErinStressi"
@@ -131,7 +140,7 @@
             android:layout_width="185dp"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:background="@drawable/round_buttons_secondary"
+            android:background="@drawable/round_buttons_blue"
             android:text="Tallenna"
             android:textColor="#FFFFFF"
             android:textSize="18sp"

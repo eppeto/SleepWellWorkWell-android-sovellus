@@ -21,6 +21,15 @@
             android:gravity="center"
             android:orientation="vertical">
 
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="135dp"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                app:srcCompat="@android:drawable/ic_dialog_info" />
+
             <TextView
                 android:id="@+id/harjoituksentyyppi"
                 android:layout_width="match_parent"
@@ -38,7 +47,7 @@
                 android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
                 android:background="@drawable/round_buttons_blue"
                 android:textColor="#FFFFFF"
@@ -100,7 +109,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp"
+                >
+
                 //tunnit
                 <NumberPicker
                     android:id="@+id/hourpicker"
@@ -140,7 +152,7 @@
                 android:id="@+id/btntallenna"
                 android:layout_width="185dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/round_buttons_blue"
                 android:text="Tallenna"
                 android:textColor="#FFFFFF"
