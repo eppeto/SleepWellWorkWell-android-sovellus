@@ -11,14 +11,16 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="135dp"
-            android:layout_marginTop="15dp"
-            android:clickable="true"
-            app:srcCompat="@android:drawable/ic_dialog_info" />
+            android:layout_marginLeft="20dp"
+            android:textStyle="bold"
+            android:typeface="monospace"
+            app:fontFamily="monospace"
+            android:textSize="18sp"
+            android:text="Valitse päivämäärä"></TextView>
+
         <DatePicker
             android:id="@+id/datePicker"
             android:layout_width="wrap_content"

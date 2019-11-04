@@ -138,6 +138,7 @@ public class Liikunta extends AppCompatActivity {
             public void onClick(View v) {
                 String text = "Tiedot Tallennettu";
                 Toast.makeText(Liikunta.this, text, Toast.LENGTH_SHORT).show();
+                finish();
 
             }
 

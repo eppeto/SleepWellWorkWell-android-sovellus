@@ -44,6 +44,7 @@ public class Ruoka extends AppCompatActivity {
 
                 String text = "Tiedot Tallennettu";
                 Toast.makeText(Ruoka.this, text, Toast.LENGTH_SHORT).show();
+                finish();
 
             }
         });

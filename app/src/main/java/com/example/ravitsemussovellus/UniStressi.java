@@ -1,6 +1,7 @@
 package com.example.ravitsemussovellus;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -44,8 +45,7 @@ public class UniStressi extends AppCompatActivity {
                 radioButton = findViewById(radioId);
                 String text = "Tiedot Tallennettu";
                 Toast.makeText(UniStressi.this, text, Toast.LENGTH_SHORT).show();
-
-
+                finish();
             }
         });
     Calendar calendar=Calendar.getInstance();
@@ -58,7 +58,6 @@ public class UniStressi extends AppCompatActivity {
 
         radioButton = findViewById(radioId);
 
-
-
     }
+
 }
