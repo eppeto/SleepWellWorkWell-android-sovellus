@@ -1,6 +1,9 @@
 package com.example.ravitsemussovellus;
 
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,7 +16,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 public class Ruoka extends AppCompatActivity {
     TextView tvCounter, tvTime;
@@ -25,11 +31,15 @@ public class Ruoka extends AppCompatActivity {
     TimePicker timepicker;
     private Calendar calendar;
 
+    private ArrayList<String> Ruokatiedot;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ruoka);
         this.setFinishOnTouchOutside(false);
+
+        this.Ruokatiedot = new ArrayList<String>();
 
         tvCounter = findViewById(R.id.tvCounter);
         btnIncreament = findViewById(R.id.btnIncreament);
@@ -42,8 +52,21 @@ public class Ruoka extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                int hour = timepicker.getCurrentHour();
+                int minute = timepicker.getCurrentMinute();
+                Ruokatiedot.add(hour + ":" + minute);
+
+                String count = tvCounter.getText().toString();
+                Ruokatiedot.add(count);
+
+                String list = "";
+                for(String item : Ruokatiedot) {
+                    list += item + "\n";
+                }
+             
                 String text = "Tiedot Tallennettu";
-                Toast.makeText(Ruoka.this, text, Toast.LENGTH_SHORT).show();
+                //kokeiltu tulostaa tiedot mitkä tallennettu arraylistiin
+                Toast.makeText(Ruoka.this, list, Toast.LENGTH_SHORT).show();
                 finish();
 
             }
