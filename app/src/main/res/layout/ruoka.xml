@@ -11,24 +11,63 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Kuinka monta kourallista söit marjoja/kasviksia/hedelmiä?"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:fontFamily="monospace" />
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="135dp"
-            android:layout_marginBottom="10dp"
-            android:clickable="true"
-            app:srcCompat="@android:drawable/ic_dialog_info" />
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnDecreament"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/round_buttons_blue"
+                android:text="-"
+                android:textColor="#ffff"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/tvCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:text="0"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:typeface="monospace" />
+
+            <Button
+                android:id="@+id/btnIncreament"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/round_buttons_blue"
+                android:text="+"
+                android:textColor="#ffff"
+                android:textSize="30sp" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/tvMeal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Valitse ajankohta"
+            android:text="Valitse kellonaika"
+            android:layout_marginTop="20dp"
             android:textSize="18sp"
             android:textStyle="bold"
-
             android:typeface="monospace"
             app:fontFamily="monospace" />
 
@@ -41,52 +80,6 @@
             android:layout_height="250dp"
             android:timePickerMode="spinner" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Kuinka monta kourallista söit marjoja/kasviksia/hedelmiä?"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:fontFamily="monospace" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btnDecreament"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/round_buttons_blue"
-            android:text="-"
-            android:textColor="#ffff"
-            android:textSize="30sp" />
-
-        <TextView
-            android:id="@+id/tvCounter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="20dp"
-            android:text="0"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:typeface="monospace" />
-
-        <Button
-            android:id="@+id/btnIncreament"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/round_buttons_blue"
-            android:text="+"
-            android:textColor="#ffff"
-            android:textSize="30sp" />
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -106,7 +99,17 @@
             android:textStyle="bold"
             android:typeface="monospace" />
 
+
+
     </LinearLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="135dp"
+            android:layout_marginBottom="10dp"
+            android:clickable="true"
+            app:srcCompat="@android:drawable/ic_dialog_info" />
     </LinearLayout>
 </RelativeLayout>
 

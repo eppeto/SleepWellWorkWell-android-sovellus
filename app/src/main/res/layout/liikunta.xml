@@ -21,15 +21,6 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/floatingActionButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="135dp"
-                android:layout_marginBottom="10dp"
-                android:clickable="true"
-                app:srcCompat="@android:drawable/ic_dialog_info" />
-
             <TextView
                 android:id="@+id/harjoituksentyyppi"
                 android:layout_width="match_parent"
@@ -124,7 +115,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Tuntia"
+                    android:text="Tunti"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     android:typeface="monospace"
@@ -140,7 +131,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Minuuttia"
+                    android:text="Minuutti"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     android:typeface="monospace"
@@ -160,6 +151,14 @@
                 android:textStyle="bold"
                 android:typeface="monospace" />
 
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="135dp"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                app:srcCompat="@android:drawable/ic_dialog_info" />
 
         </LinearLayout>
 

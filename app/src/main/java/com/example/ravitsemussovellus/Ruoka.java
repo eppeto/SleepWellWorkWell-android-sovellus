@@ -66,7 +66,7 @@ public class Ruoka extends AppCompatActivity {
              
                 String text = "Tiedot Tallennettu";
                 //kokeiltu tulostaa tiedot mitkä tallennettu arraylistiin
-                Toast.makeText(Ruoka.this, list, Toast.LENGTH_SHORT).show();
+                Toast.makeText(Ruoka.this, text, Toast.LENGTH_SHORT).show();
                 finish();
 
             }
@@ -98,6 +98,7 @@ public class Ruoka extends AppCompatActivity {
 
         //timepicker
         timepicker.setIs24HourView(true);
+
         this.infoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
