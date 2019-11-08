@@ -1,11 +1,15 @@
 package com.example.ravitsemussovellus;
 
+import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.DatePicker;
+import android.widget.ImageButton;
 import android.widget.NumberPicker;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.ToggleButton;
 import android.widget.Toast;
 
@@ -16,22 +20,69 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class Liikunta extends AppCompatActivity {
     Button btnTallenna, btnback;
+    ImageButton btnVaihdaSport;
+    TextView textDateSport;
     ToggleButton tbtnkestavyys, tbtnlihasvoima, tbtnliikkuvuus;
     FloatingActionButton infoButton;
+    int day, month, year;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.liikunta);
 
+        textDateSport = findViewById(R.id.textDateSport);
+        btnVaihdaSport = findViewById(R.id.btnVaihdaSport);
         tbtnkestavyys = findViewById(R.id.tbtnkestavyys);
         tbtnlihasvoima = findViewById(R.id.tbtnlihasvoima);
         tbtnliikkuvuus = findViewById(R.id.tbtnliikkuvuus);
         btnTallenna = findViewById(R.id.btntallenna);
         btnback=findViewById(R.id.btnback);
         infoButton= findViewById(R.id.floatingActionButton);
+
+        //datepicker
+        SimpleDateFormat currentDate = new SimpleDateFormat("dd/MM/yyyy");
+        Date todayDate = new Date();
+        String thisDate = currentDate.format(todayDate);
+        textDateSport.setText(thisDate);
+
+        btnVaihdaSport.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                DatePickerDialog.OnDateSetListener dpd = new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                          int dayOfMonth) {
+
+                        int s = monthOfYear + 1;
+                        String a = dayOfMonth + "."+ s +"."+ year;
+                        textDateSport.setText(a);
+                    }
+                };
+                // Määritellään nykyhetki + min ja max päivät
+                final Calendar c = Calendar.getInstance();
+                year=c.get(Calendar.YEAR);
+                month=c.get(Calendar.MONTH);
+                day=c.get(Calendar.DAY_OF_MONTH);
+                DatePickerDialog d = new DatePickerDialog(Liikunta.this, dpd, year, month, day);
+                d.getDatePicker().setMaxDate((c.getTimeInMillis()));
+                // asetetaan takarajaksi viikko
+                c.add(Calendar.DATE, -6);
+                // Set the Calendar new date as minimum date of date picker
+                d.getDatePicker().setMinDate(c.getTimeInMillis());
+
+                d.show();
+
+            }
+        });
 
         // Harjoituksen tyypin valinnan listenerit
         // kestävyys
@@ -47,7 +98,7 @@ public class Liikunta extends AppCompatActivity {
                     // The toggle is disabled
                     // tausta vaihdetaan takaisin
                     tbtnkestavyys.setPadding(0,0,0,0);
-                    tbtnkestavyys.setBackground(getResources().getDrawable(R.drawable.round_buttons_secondary));
+                    tbtnkestavyys.setBackground(getResources().getDrawable(R.drawable.round_buttons_blue));
                 }
             }
         });
@@ -64,7 +115,7 @@ public class Liikunta extends AppCompatActivity {
                     // The toggle is disabled
                     // tausta vaihdetaan takaisin
                     tbtnlihasvoima.setPadding(0,0,0,0);
-                    tbtnlihasvoima.setBackground(getResources().getDrawable(R.drawable.round_buttons_secondary));
+                    tbtnlihasvoima.setBackground(getResources().getDrawable(R.drawable.round_buttons_blue));
                 }
             }
         });
@@ -82,7 +133,7 @@ public class Liikunta extends AppCompatActivity {
                     // The toggle is disabled
                     // tausta vaihdetaan takaisin
                     tbtnliikkuvuus.setPadding(0,0,0,0);
-                    tbtnliikkuvuus.setBackground(getResources().getDrawable(R.drawable.round_buttons_secondary));
+                    tbtnliikkuvuus.setBackground(getResources().getDrawable(R.drawable.round_buttons_blue));
                 }
             }
         });

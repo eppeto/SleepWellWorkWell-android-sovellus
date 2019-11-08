@@ -9,31 +9,31 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.ImageButton;
+import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.SimpleTimeZone;
 
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 public class Ruoka extends AppCompatActivity {
-    TextView tvCounter, eText;
+    TextView tvCounter, textDateRuoka;
     Button btnIncreament;
     Button btnDecreament;
-    Button btnSave, btnBack, btnVaihda;
+    Button btnSave, btnBack;
+    ImageButton btnVaihdaRuoka;
     FloatingActionButton infoButton;
     int counter = 0;
     TimePicker timepicker;
-    private Calendar calendar;
     int day, month, year;
 
     //private ArrayList<String> Ruokatiedot;
@@ -49,45 +49,12 @@ public class Ruoka extends AppCompatActivity {
         tvCounter = findViewById(R.id.tvCounter);
         btnIncreament = findViewById(R.id.btnIncreament);
         btnDecreament = findViewById(R.id.btnDecreament);
-        eText=findViewById(R.id.eTextDate);
-        btnVaihda=findViewById(R.id.btnVaihda);
-        timepicker = findViewById(R.id.timePicker);
+        textDateRuoka=findViewById(R.id.eTextDate);
+        btnVaihdaRuoka=findViewById(R.id.btnVaihda);
         btnSave = findViewById(R.id.btnSave);
         btnBack=findViewById(R.id.btnback);
         infoButton= findViewById(R.id.floatingActionButton);
-
-        btnSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                int hour = timepicker.getCurrentHour();
-                int minute = timepicker.getCurrentMinute();
-                //Ruokatiedot.add(hour + ":" + minute);
-
-                String count = tvCounter.getText().toString();
-                //Ruokatiedot.add(count);
-
-                /*String list = "";
-                for(String item : Ruokatiedot) {
-                    list += item + "\n";
-                }*/
-             
-                String text = "Tiedot Tallennettu";
-                //kokeiltu tulostaa tiedot mitkä tallennettu arraylistiin
-                Toast.makeText(Ruoka.this, text, Toast.LENGTH_SHORT).show();
-                finish();
-
-            }
-        });
-
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String text = "Tietoja ei ole tallennettu";
-                Toast.makeText(Ruoka.this, text, Toast.LENGTH_SHORT).show();
-                finish();
-            }
-        });
+        timepicker=findViewById(R.id.timepicker);
 
         //Kasvikset/marjat/hedelmät counter
         tvCounter.setText("0");
@@ -115,9 +82,9 @@ public class Ruoka extends AppCompatActivity {
         SimpleDateFormat currentDate = new SimpleDateFormat("dd/MM/yyyy");
         Date todayDate = new Date();
         String thisDate = currentDate.format(todayDate);
-        eText.setText(thisDate);
+        textDateRuoka.setText(thisDate);
 
-        btnVaihda.setOnClickListener(new View.OnClickListener() {
+        btnVaihdaRuoka.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -128,22 +95,48 @@ public class Ruoka extends AppCompatActivity {
                                           int dayOfMonth) {
 
                         int s = monthOfYear + 1;
-                        String a = dayOfMonth + "/" + s + "/" + year;
-                        eText.setText(a);
+                        String a = dayOfMonth + "."+ s +"."+ year;
+                        textDateRuoka.setText(a);
                     }
                 };
-
-
+                // Määritellään nykyhetki + min ja max päivät
+                final Calendar c = Calendar.getInstance();
+                year=c.get(Calendar.YEAR);
+                month=c.get(Calendar.MONTH);
+                day=c.get(Calendar.DAY_OF_MONTH);
                 DatePickerDialog d = new DatePickerDialog(Ruoka.this, dpd, year, month, day);
+
+                d.getDatePicker().setMaxDate((c.getTimeInMillis()));
+                // asetetaan takarajaksi viikko
+                c.add(Calendar.DATE, -6);
+                // Set the Calendar new date as minimum date of date picker
+                d.getDatePicker().setMinDate(c.getTimeInMillis());
+
                 d.show();
 
             }
         });
 
+        // Timepicker, jossa valitaan ruokailun klo aika
+
+        // tuntien valinta
 
 
-        //timepicker
         timepicker.setIs24HourView(true);
+
+
+        // Esimerkki OnValueChangeListeneristä jos tarvitaan tallennukseen
+
+        /*hp.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
+            @Override
+            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+                String text = "Changed from " + oldVal + " to " + newVal;
+                Toast.makeText(Liikunta.this, text, Toast.LENGTH_SHORT).show();
+            }
+            });*/
+
+
+
 
         this.infoButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -162,6 +155,39 @@ public class Ruoka extends AppCompatActivity {
                                 dialogInterface.dismiss();
                             }
                         }).show();
+            }
+        });
+
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                int hour = timepicker.getCurrentHour();
+                int minute = timepicker.getCurrentMinute();
+                //Ruokatiedot.add(hour + ":" + minute);
+
+                String count = tvCounter.getText().toString();
+                //Ruokatiedot.add(count);
+
+                /*String list = "";
+                for(String item : Ruokatiedot) {
+                    list += item + "\n";
+                }*/
+
+                String text = "Tiedot Tallennettu";
+                //kokeiltu tulostaa tiedot mitkä tallennettu arraylistiin
+                Toast.makeText(Ruoka.this, text, Toast.LENGTH_SHORT).show();
+                finish();
+
+            }
+        });
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String text = "Tietoja ei ole tallennettu";
+                Toast.makeText(Ruoka.this, text, Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
 

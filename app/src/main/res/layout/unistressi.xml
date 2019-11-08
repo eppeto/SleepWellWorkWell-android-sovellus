@@ -9,24 +9,39 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:scaleType = "centerCrop">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:textStyle="bold"
-            android:typeface="monospace"
-            app:fontFamily="monospace"
-            android:textSize="18sp"
-            android:text="Valitse päivämäärä"></TextView>
-
-        <DatePicker
-            android:id="@+id/datePicker"
+            android:id="@+id/textDateUni"
+            android:textSize="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:datePickerMode="spinner"
-            android:calendarViewShown="false"/>
+            android:textStyle="bold"
+            android:typeface="monospace"
+            app:fontFamily="monospace" />
+
+        <ImageButton
+            android:id="@+id/btnVaihdaUni"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/calendericon" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:layout_marginBottom="50dp"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/editTextUni"
@@ -88,6 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
+            android:layout_marginTop="40dp"
             android:text="Stressin määrä"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -136,12 +152,25 @@
                 android:drawableRight="@drawable/bad"/>
 
         </RadioGroup>
+    </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:gravity="center"
             android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnUniBack"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/round_buttons_blue"
+                android:text="Peruuta"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="monospace" />
 
             <Button
                 android:id="@+id/btnUniTallenna"
@@ -155,17 +184,7 @@
                 android:textStyle="bold"
                 android:typeface="monospace" />
 
-            <Button
-                android:id="@+id/btnUniBack"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/round_buttons_blue"
-                android:text="Peruuta"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:typeface="monospace" />
         </LinearLayout>
+
     </LinearLayout>
 </RelativeLayout>

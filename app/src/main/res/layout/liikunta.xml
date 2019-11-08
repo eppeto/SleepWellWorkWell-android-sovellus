@@ -12,6 +12,31 @@
         android:orientation="vertical"
         android:scaleType = "centerCrop">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textDateSport"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:typeface="monospace"
+                app:fontFamily="monospace"
+                />
+
+            <ImageButton
+                android:id="@+id/btnVaihdaSport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/calendericon" />
+        </LinearLayout>
+
 
         // Harjoituksen tyyppi teksti, buttonit ja floatbutton layout
         <LinearLayout
@@ -136,7 +161,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Tunti"
+                    android:text="h"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     android:typeface="monospace"
@@ -152,7 +177,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Minuutti"
+                    android:text="min"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     android:typeface="monospace"
@@ -168,6 +193,18 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/btnback"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/round_buttons_blue"
+                    android:text="Peruuta"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+
+                <Button
                     android:id="@+id/btntallenna"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
@@ -179,17 +216,7 @@
                     android:textStyle="bold"
                     android:typeface="monospace" />
 
-            <Button
-                android:id="@+id/btnback"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/round_buttons_blue"
-                android:text="Peruuta"
-                android:textColor="#FFFFFF"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:typeface="monospace" />
+
         </LinearLayout>
     </LinearLayout>
     </LinearLayout>

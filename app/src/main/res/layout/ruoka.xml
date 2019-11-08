@@ -4,6 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,17 +16,17 @@
         android:textSize="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        app:fontFamily="monospace"
         />
-    <Button
+
+    <ImageButton
         android:id="@+id/btnVaihda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/round_buttons_blue"
-        android:text="pvm"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:typeface="monospace" />
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/calendericon" />
     </LinearLayout>
 
 
@@ -110,12 +111,6 @@
                 app:srcCompat="@android:drawable/ic_dialog_info" />
         </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="bottom|center"
-        android:layout_margin="20dp"
-        android:orientation="vertical">
 
         <TextView
             android:id="@+id/tvMeal"
@@ -128,16 +123,22 @@
             android:textStyle="bold"
             android:typeface="monospace"
             app:fontFamily="monospace" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginLeft="20dp"
+            >
 
-        <TimePicker
-            android:id="@+id/timePicker"
-            android:scaleX="1.15"
-            android:scaleY="1.15"
-            android:textColor="#fff"
-            android:layout_width="fill_parent"
-            android:layout_height="250dp"
-            android:timePickerMode="spinner" />
-    </LinearLayout>
+            //tunnit
+            <TimePicker
+                android:id="@+id/timepicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:timePickerMode="spinner"/>
+
+        </LinearLayout>
 
     //buttonit tallenna ja peruuta
     <LinearLayout
@@ -145,6 +146,18 @@
         android:layout_height="60dp"
         android:gravity="center"
         android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnback"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/round_buttons_blue"
+            android:text="Peruuta"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:typeface="monospace" />
 
         <Button
             android:id="@+id/btnSave"
@@ -158,17 +171,7 @@
             android:textStyle="bold"
             android:typeface="monospace" />
 
-        <Button
-            android:id="@+id/btnback"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/round_buttons_blue"
-            android:text="Peruuta"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:typeface="monospace" />
+
     </LinearLayout>
     </LinearLayout>
     </LinearLayout>
