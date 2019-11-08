@@ -25,7 +25,7 @@ public class Ruoka extends AppCompatActivity {
     TextView tvCounter, tvTime;
     Button btnIncreament;
     Button btnDecreament;
-    Button btnSave;
+    Button btnSave, btnBack;
     FloatingActionButton infoButton;
     int counter = 0;
     TimePicker timepicker;
@@ -46,6 +46,7 @@ public class Ruoka extends AppCompatActivity {
         btnDecreament = findViewById(R.id.btnDecreament);
         timepicker = (TimePicker) findViewById(R.id.timePicker);
         btnSave = findViewById(R.id.btnSave);
+        btnBack=findViewById(R.id.btnback);
         infoButton= findViewById(R.id.floatingActionButton);
 
         btnSave.setOnClickListener(new View.OnClickListener() {
@@ -70,6 +71,17 @@ public class Ruoka extends AppCompatActivity {
                 finish();
 
             }
+        });
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String text = "Tietoja ei ole tallennettu";
+                Toast.makeText(Ruoka.this, text, Toast.LENGTH_SHORT).show();
+                finish();
+
+            }
+
         });
 
         //Kasvikset/marjat/hedelmät counter

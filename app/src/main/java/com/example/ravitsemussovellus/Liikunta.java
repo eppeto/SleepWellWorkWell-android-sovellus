@@ -17,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Liikunta extends AppCompatActivity {
-    Button btnTallenna;
+    Button btnTallenna, btnback;
     ToggleButton tbtnkestavyys, tbtnlihasvoima, tbtnliikkuvuus;
     FloatingActionButton infoButton;
 
@@ -30,6 +30,7 @@ public class Liikunta extends AppCompatActivity {
         tbtnlihasvoima = findViewById(R.id.tbtnlihasvoima);
         tbtnliikkuvuus = findViewById(R.id.tbtnliikkuvuus);
         btnTallenna = findViewById(R.id.btntallenna);
+        btnback=findViewById(R.id.btnback);
         infoButton= findViewById(R.id.floatingActionButton);
 
         // Harjoituksen tyypin valinnan listenerit
@@ -137,6 +138,17 @@ public class Liikunta extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String text = "Tiedot Tallennettu";
+                Toast.makeText(Liikunta.this, text, Toast.LENGTH_SHORT).show();
+                finish();
+
+            }
+
+        });
+
+        btnback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String text = "Tietoja ei ole tallennettu";
                 Toast.makeText(Liikunta.this, text, Toast.LENGTH_SHORT).show();
                 finish();
 

@@ -23,7 +23,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class UniStressi extends AppCompatActivity {
 
-    private Button btnUniStressi;
+    private Button btnUniTallenna, btnUniBack;
     RadioGroup radioGroup;
     RadioButton radioButton;
 
@@ -32,12 +32,13 @@ public class UniStressi extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.unistressi);
 
-        btnUniStressi = findViewById(R.id.btnUniStressi);
+        btnUniTallenna = findViewById(R.id.btnUniTallenna);
         radioGroup = findViewById(R.id.radioGroupUni);
         radioGroup = findViewById(R.id.radioGroupStressi);
+        btnUniBack=findViewById(R.id.btnUniBack);
 
-        Button buttonUniStressi = findViewById(R.id.btnUniStressi);
-        buttonUniStressi.setOnClickListener(new View.OnClickListener() {
+
+        btnUniTallenna.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int radioId=radioGroup.getCheckedRadioButtonId();
@@ -47,6 +48,17 @@ public class UniStressi extends AppCompatActivity {
                 Toast.makeText(UniStressi.this, text, Toast.LENGTH_SHORT).show();
                 finish();
             }
+        });
+
+        btnUniBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String text = "Tietoja ei ole tallennettu";
+                Toast.makeText(UniStressi.this, text, Toast.LENGTH_SHORT).show();
+                finish();
+
+            }
+
         });
     Calendar calendar=Calendar.getInstance();
     SimpleDateFormat simpleDateFormat= new SimpleDateFormat("dd-MM-yyy");

@@ -137,17 +137,35 @@
 
         </RadioGroup>
 
-        <Button
-            android:id="@+id/btnUniStressi"
-            android:layout_width="185dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:background="@drawable/round_buttons_blue"
-            android:text="Tallenna"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:typeface="monospace" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:orientation="horizontal">
 
+            <Button
+                android:id="@+id/btnUniTallenna"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/round_buttons_blue"
+                android:text="Tallenna"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="monospace" />
+
+            <Button
+                android:id="@+id/btnUniBack"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/round_buttons_blue"
+                android:text="Peruuta"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:typeface="monospace" />
+        </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
