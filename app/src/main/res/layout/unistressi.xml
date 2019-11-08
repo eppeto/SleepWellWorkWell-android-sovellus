@@ -10,13 +10,15 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
-        android:scaleType = "centerCrop">
+        android:scaleType = "centerCrop"
+        >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+       >
 
         <TextView
             android:id="@+id/textDateUni"
@@ -45,20 +47,20 @@
 
         <TextView
             android:id="@+id/editTextUni"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:layout_margin="20dp"
-            android:layout_marginLeft="200dp"
             android:text="Unen laatu"
             android:textSize="18sp"
-            android:textStyle="bold"
             android:typeface="monospace"
             app:fontFamily="monospace" />
 
         <RadioGroup
             android:id="@+id/radioGroupUni"
-            android:layout_width="295dp"
-            android:layout_height="110dp">
+            android:layout_width="fill_parent"
+            android:layout_height="110dp"
+            android:gravity="center">
 
             <RadioButton
                 android:id="@+id/RbtnErinUni"
@@ -100,20 +102,22 @@
 
         <TextView
             android:id="@+id/editTextStressi"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:gravity="center"
             android:layout_marginTop="40dp"
+            android:layout_margin="20dp"
             android:text="Stressin määrä"
             android:textSize="18sp"
-            android:textStyle="bold"
+
             android:typeface="monospace"
             app:fontFamily="monospace" />
 
         <RadioGroup
             android:id="@+id/radioGroupStressi"
-            android:layout_width="295dp"
-            android:layout_height="110dp">
+            android:layout_width="fill_parent"
+            android:layout_height="110dp"
+            android:gravity="center">
 
             <RadioButton
                 android:id="@+id/RbtnErinStressi"
