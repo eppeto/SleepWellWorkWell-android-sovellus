@@ -37,136 +37,137 @@
         android:orientation="vertical"
         android:scaleType = "centerCrop">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical">
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Kuinka monta kourallista söit marjoja/kasviksia/hedelmiä?"
-            android:textSize="18dp"
-            android:typeface="monospace"
-            app:fontFamily="monospace" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:orientation="vertical">
 
-    </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Kuinka monta kourallista söit marjoja/kasviksia/hedelmiä?"
+                    android:textSize="16dp"
+                    android:typeface="monospace"
+                    app:fontFamily="monospace" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
+            </LinearLayout>
 
-            <Button
-                android:id="@+id/btnDecreament"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/round_buttons_blue"
-                android:text="-"
-                android:textColor="#ffff"
-                android:textSize="30sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnDecreament"
+                    android:layout_width="60dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/round_buttons_blue"
+                    android:text="-"
+                    android:textColor="#ffff"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/tvCounter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="18dp"
+                    android:text="0"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+
+                <Button
+                    android:id="@+id/btnIncreament"
+                    android:layout_width="60dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/round_buttons_blue"
+                    android:text="+"
+                    android:textColor="#ffff"
+                    android:textSize="30sp" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButton"
+                    android:layout_width="90dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:clickable="true"
+                    app:backgroundTint="#00b7c7"
+                    app:srcCompat="@android:drawable/ic_dialog_info" />
+            </LinearLayout>
+
 
             <TextView
-                android:id="@+id/tvCounter"
+                android:id="@+id/tvMeal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="18dp"
-                android:text="0"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                android:typeface="monospace" />
+                android:layout_marginTop="20dp"
+                android:text="Valitse kellonaika:"
+                android:textSize="18sp"
+                android:typeface="monospace"
+                app:fontFamily="monospace" />
 
-            <Button
-                android:id="@+id/btnIncreament"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/round_buttons_blue"
-                android:text="+"
-                android:textColor="#ffff"
-                android:textSize="30sp" />
+                android:gravity="center"
+                android:orientation="horizontal">
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/floatingActionButton"
+                <TimePicker
+                    android:id="@+id/timepicker"
+                    android:layout_width="314dp"
+                    android:layout_height="167dp"
+                    android:timePickerMode="spinner" />
+
+            </LinearLayout>
+
+            //buttonit tallenna ja peruuta
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:clickable="true"
-                app:backgroundTint="#00b7c7"
-                app:srcCompat="@android:drawable/ic_dialog_info" />
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnback"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/round_buttons_blue"
+                    android:text="Peruuta"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+
+                <Button
+                    android:id="@+id/btnSave"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/round_buttons_blue"
+                    android:text="Tallenna"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:typeface="monospace" />
+
+
+            </LinearLayout>
         </LinearLayout>
-
-
-        <TextView
-            android:id="@+id/tvMeal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Valitse kellonaika:"
-            android:layout_marginTop="40dp"
-            android:textSize="18sp"
-            android:typeface="monospace"
-            app:fontFamily="monospace" />
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            >
-
-            <TimePicker
-                android:id="@+id/timepicker"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:timePickerMode="spinner"/>
-
-        </LinearLayout>
-
-    //buttonit tallenna ja peruuta
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btnback"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/round_buttons_blue"
-            android:text="Peruuta"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:typeface="monospace" />
-
-        <Button
-            android:id="@+id/btnSave"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/round_buttons_blue"
-            android:text="Tallenna"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:typeface="monospace" />
-
-
-    </LinearLayout>
-    </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
 
