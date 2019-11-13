@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+<LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        >
+    //1. weight
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_weight="1"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="#DCDCDC"
+       >
     <TextView
         android:id="@+id/eTextDate"
         android:textSize="20dp"
@@ -29,23 +36,18 @@
         android:background="@drawable/calendericon" />
     </LinearLayout>
 
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:scaleType = "centerCrop">
-
+    //2. weight
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
             android:gravity="center"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -58,7 +60,7 @@
                     android:typeface="monospace"
                     app:fontFamily="monospace" />
 
-            </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -106,8 +108,13 @@
                     app:backgroundTint="#00b7c7"
                     app:srcCompat="@android:drawable/ic_dialog_info" />
             </LinearLayout>
-
-
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:orientation="vertical">
             <TextView
                 android:id="@+id/tvMeal"
                 android:layout_width="wrap_content"
@@ -119,11 +126,7 @@
                 android:typeface="monospace"
                 app:fontFamily="monospace" />
 
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
+
 
                 <TimePicker
                     android:id="@+id/timepicker"
@@ -132,12 +135,13 @@
                     android:timePickerMode="spinner" />
 
             </LinearLayout>
-
+    </LinearLayout>
+            //3. weight
             //buttonit tallenna ja peruuta
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -168,6 +172,6 @@
 
             </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
 </RelativeLayout>
+
 

@@ -8,17 +8,17 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:gravity="center"
         android:orientation="vertical"
-        android:scaleType = "centerCrop">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
+        >
+    //1. weight
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:background="#DCDCDC"
+        >
             <TextView
                 android:id="@+id/textDateSport"
                 android:textSize="20dp"
@@ -39,12 +39,13 @@
 
 
         // Harjoituksen tyyppi teksti, buttonit ja floatbutton layout
+        //2. weight
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
             android:gravity="center"
             android:orientation="vertical">
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -184,11 +185,14 @@
                     app:fontFamily="monospace" />
 
             </LinearLayout>
+        </LinearLayout>
 
+            //3. weight
             //buttonit tallenna ja peruuta
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -218,6 +222,5 @@
 
 
         </LinearLayout>
-    </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

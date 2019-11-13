@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
+    android:layout_height="match_parent">
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:orientation="vertical"
-        android:scaleType = "centerCrop"
         >
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal"
-       >
+        //1. weight
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:background="#DCDCDC"
+            >
 
         <TextView
             android:id="@+id/textDateUni"
@@ -37,14 +36,13 @@
             android:background="@drawable/calendericon" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:layout_marginBottom="50dp"
-        android:orientation="vertical">
-
+        //2. weight
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:orientation="vertical">
         <TextView
             android:id="@+id/editTextUni"
             android:layout_width="fill_parent"
@@ -158,13 +156,16 @@
         </RadioGroup>
     </LinearLayout>
 
+        //3. weight
+        //buttonit tallenna ja peruuta
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:gravity="center"
             android:orientation="horizontal">
 
-            <Button
+        <Button
                 android:id="@+id/btnUniBack"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
