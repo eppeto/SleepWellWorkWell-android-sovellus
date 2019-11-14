@@ -25,18 +25,20 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class Liikunta extends AppCompatActivity {
+    DatabaseHelper db;
     Button btnTallenna, btnback;
     ImageButton btnVaihdaSport;
     TextView textDateSport;
     ToggleButton tbtnkestavyys, tbtnlihasvoima, tbtnliikkuvuus;
     FloatingActionButton infoButton;
     int day, month, year;
+    String tyyppi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.liikunta);
-
+        db = new DatabaseHelper(this);
         textDateSport = findViewById(R.id.textDateSport);
         btnVaihdaSport = findViewById(R.id.btnVaihdaSport);
         tbtnkestavyys = findViewById(R.id.tbtnkestavyys);
@@ -91,6 +93,7 @@ public class Liikunta extends AppCompatActivity {
                 if (isChecked) {
                     tbtnlihasvoima.setChecked(false);
                     tbtnliikkuvuus.setChecked(false);
+                    tyyppi = "kestävyys";
                     // tausta vaihdetaan
                     tbtnkestavyys.setPadding(5,5,5,5);
                     tbtnkestavyys.setBackground(getResources().getDrawable(R.drawable.round_buttons_green));
@@ -108,6 +111,7 @@ public class Liikunta extends AppCompatActivity {
                 if (isChecked) {
                     tbtnkestavyys.setChecked(false);
                     tbtnliikkuvuus.setChecked(false);
+                    tyyppi = "lihasvoima";
                     // tausta vaihdetaan
                     tbtnlihasvoima.setPadding(5,5,5,5);
                     tbtnlihasvoima.setBackground(getResources().getDrawable(R.drawable.round_buttons_green));
@@ -126,6 +130,7 @@ public class Liikunta extends AppCompatActivity {
                 if (isChecked) {
                     tbtnlihasvoima.setChecked(false);
                     tbtnkestavyys.setChecked(false);
+                    tyyppi = "liikkuvuus";
                     // tausta vaihdetaan
                     tbtnliikkuvuus.setPadding(5,5,5,5);
                     tbtnliikkuvuus.setBackground(getResources().getDrawable(R.drawable.round_buttons_green));
@@ -188,9 +193,18 @@ public class Liikunta extends AppCompatActivity {
         btnTallenna.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String text = "Tiedot Tallennettu";
-                Toast.makeText(Liikunta.this, text, Toast.LENGTH_SHORT).show();
-                finish();
+               boolean isInserted = db.insertData_liikunta(tyyppi,textDateSport.getText().toString(),hp.toString()+mp.toString());
+                if (isInserted = true){
+                    String text = "Tiedot Tallennettu";
+                    Toast.makeText(Liikunta.this, text, Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+                else {
+                    String text = "Tietoja ei ole tallennettu!!";
+                    Toast.makeText(Liikunta.this, text, Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+
 
             }
 

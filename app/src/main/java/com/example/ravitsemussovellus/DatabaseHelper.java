@@ -1,5 +1,6 @@
 package com.example.ravitsemussovellus;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -39,7 +40,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public DatabaseHelper(@Nullable Context context) {
 
         super(context, DATABASE_NAME, null, 1);
-        SQLiteDatabase db = this.getWritableDatabase();
+
     }
 
     // alla oleva funktio luo tyhjät taulut tietokantaan soluineen
@@ -59,5 +60,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS "+TABLE_UNISTRESSI_NAME);
         onCreate(db);
 
+    }
+
+    public boolean insertData_liikunta(String tyyppi, String pvm, String kesto){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_2_LIIKUNTA, tyyppi);
+        contentValues.put(COL_3_LIIKUNTA, pvm);
+        contentValues.put(COL_4_LIIKUNTA, kesto);
+        long result = db.insert(TABLE_LIIKUNTA_NAME,null ,contentValues);
+        if (result == -1) {
+            return false;
+        }
+        else {
+            return true;
+        }
     }
 }
