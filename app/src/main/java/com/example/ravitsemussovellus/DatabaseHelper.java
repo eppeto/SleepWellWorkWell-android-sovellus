@@ -37,7 +37,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // alla oleva construktori luo tietokannan kutsuttaessa
     public DatabaseHelper(@Nullable Context context) {
+
         super(context, DATABASE_NAME, null, 1);
+        SQLiteDatabase db = this.getWritableDatabase();
     }
 
     // alla oleva funktio luo tyhjät taulut tietokantaan soluineen

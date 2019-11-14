@@ -10,6 +10,8 @@ import android.widget.Button;
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 public class MainActivity extends AppCompatActivity {
+    DatabaseHelper myDb;
+
     private Button btnKysely, btnRaportit;
 
 
@@ -17,6 +19,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // kutsutaan databasehelperin konstruktioria, joka luo tietokannan
+        myDb = new DatabaseHelper(this);
 
         this.btnKysely =  findViewById(R.id.btnKysely);
         this.btnRaportit = findViewById(R.id.btnRaportit);
