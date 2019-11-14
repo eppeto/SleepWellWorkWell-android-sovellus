@@ -27,7 +27,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class UniStressi extends AppCompatActivity {
 
     private Button btnUniTallenna, btnUniBack;
-    RadioGroup radioGroup;
+    DatabaseHelper db;
+    RadioGroup radioGroup, radioGroup2;
     RadioButton radioButton;
     ImageButton btnVaihdaUni;
     TextView textDateUni;
@@ -39,12 +40,13 @@ public class UniStressi extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.unistressi);
+        db = new DatabaseHelper(this);
 
         btnVaihdaUni=findViewById(R.id.btnVaihdaUni);
         textDateUni=findViewById(R.id.textDateUni);
         btnUniTallenna = findViewById(R.id.btnUniTallenna);
         radioGroup = findViewById(R.id.radioGroupUni);
-        radioGroup = findViewById(R.id.radioGroupStressi);
+        radioGroup2 = findViewById(R.id.radioGroupStressi);
         btnUniBack=findViewById(R.id.btnUniBack);
 
 
@@ -88,12 +90,21 @@ public class UniStressi extends AppCompatActivity {
         btnUniTallenna.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int radioId=radioGroup.getCheckedRadioButtonId();
+                /*int radioId=radioGroup.getCheckedRadioButtonId();
 
-                radioButton = findViewById(radioId);
-                String text = "Tiedot Tallennettu";
-                Toast.makeText(UniStressi.this, text, Toast.LENGTH_SHORT).show();
-                finish();
+                radioButton = findViewById(radioId);*/
+                    // Databaseen vienti ----------- HUOM!!!! radiobuttoneissa (unen laatu ja stressin määrä) on bugi!! PITÄÄ KORJATA! -----------------
+                boolean isInserted = db.insertData_unistressi(radioGroup.getId(),radioGroup2.getId(),textDateUni.getText().toString());
+                if (isInserted = true){
+                    String text = "Tiedot Tallennettu";
+                    Toast.makeText(UniStressi.this, text, Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+                else {
+                    String text = "Tietoja ei ole tallennettu!!";
+                    Toast.makeText(UniStressi.this, text, Toast.LENGTH_SHORT).show();
+                    finish();
+                }
             }
         });
 

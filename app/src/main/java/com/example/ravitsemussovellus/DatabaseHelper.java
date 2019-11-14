@@ -62,7 +62,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
 
     }
-
+        // Liikuntatietojen lisäys tietokantaan
     public boolean insertData_liikunta(String tyyppi, String pvm, String kesto){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -71,6 +71,36 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL_4_LIIKUNTA, kesto);
         long result = db.insert(TABLE_LIIKUNTA_NAME,null ,contentValues);
         if (result == -1) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+        // ravintotietojen lisäys tietokantaan
+    public boolean insertData_ruoka(String pvm, int maara, int kello){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_2_RUOKA, pvm);
+        contentValues.put(COL_3_RUOKA, maara);
+        contentValues.put(COL_4_RUOKA, kello);
+        long result = db.insert(TABLE_RUOKA_NAME, null, contentValues);
+        if(result == -1){
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+        // Uni ja stressi tietojen lisäys tietokantaan
+    public boolean insertData_unistressi(int unilaatu, int stressi, String pvm) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_2_UNISTRESSI, unilaatu);
+        contentValues.put(COL_3_UNISTRESSI, stressi);
+        contentValues.put(COL_4_UNISTRESSI, pvm);
+        long result = db.insert(TABLE_UNISTRESSI_NAME, null, contentValues);
+        if(result == -1){
             return false;
         }
         else {

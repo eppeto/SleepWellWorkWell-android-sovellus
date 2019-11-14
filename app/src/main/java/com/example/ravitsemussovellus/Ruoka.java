@@ -27,6 +27,7 @@ import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 public class Ruoka extends AppCompatActivity {
     TextView tvCounter, textDateRuoka;
+    DatabaseHelper db;
     Button btnIncreament;
     Button btnDecreament;
     Button btnSave, btnBack;
@@ -43,8 +44,8 @@ public class Ruoka extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ruoka);
         this.setFinishOnTouchOutside(false);
+        db = new DatabaseHelper(this);
 
-        //this.Ruokatiedot = new ArrayList<String>();
 
         tvCounter = findViewById(R.id.tvCounter);
         btnIncreament = findViewById(R.id.btnIncreament);
@@ -125,18 +126,6 @@ public class Ruoka extends AppCompatActivity {
         timepicker.setIs24HourView(true);
 
 
-        // Esimerkki OnValueChangeListeneristä jos tarvitaan tallennukseen
-
-        /*hp.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
-            @Override
-            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-                String text = "Changed from " + oldVal + " to " + newVal;
-                Toast.makeText(Liikunta.this, text, Toast.LENGTH_SHORT).show();
-            }
-            });*/
-
-
-
 
         this.infoButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -158,30 +147,27 @@ public class Ruoka extends AppCompatActivity {
             }
         });
 
+
+            // Tallenna napin onclick listener
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                int hour = timepicker.getCurrentHour();
-                int minute = timepicker.getCurrentMinute();
-                //Ruokatiedot.add(hour + ":" + minute);
-
-                String count = tvCounter.getText().toString();
-                //Ruokatiedot.add(count);
-
-                /*String list = "";
-                for(String item : Ruokatiedot) {
-                    list += item + "\n";
-                }*/
-
-                String text = "Tiedot Tallennettu";
-                //kokeiltu tulostaa tiedot mitkä tallennettu arraylistiin
-                Toast.makeText(Ruoka.this, text, Toast.LENGTH_SHORT).show();
-                finish();
-
+                // Databaseen vienti. ---------------- HUOM!! KELLONAJASSA ON BUGI PITÄÄ KORJATA!!!! --------------------
+                boolean isInserted = db.insertData_ruoka(textDateRuoka.getText().toString(),counter,timepicker.getCurrentHour()+timepicker.getCurrentMinute());
+                if (isInserted = true){
+                    String text = "Tiedot Tallennettu";
+                    Toast.makeText(Ruoka.this, text, Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+                else {
+                    String text = "Tietoja ei ole tallennettu!!";
+                    Toast.makeText(Ruoka.this, text, Toast.LENGTH_SHORT).show();
+                    finish();
+                }
             }
         });
-
+            // Takaisin napin onclick listener
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

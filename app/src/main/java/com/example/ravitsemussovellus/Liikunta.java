@@ -211,7 +211,7 @@ public class Liikunta extends AppCompatActivity {
             }
 
         });
-
+        // Takaisin napin onclick listener
         btnback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
