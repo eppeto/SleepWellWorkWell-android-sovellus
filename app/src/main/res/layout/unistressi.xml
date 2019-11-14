@@ -53,6 +53,7 @@
             android:gravity="center"
             android:text="Unen laatu"
             android:textSize="20dp"
+            android:textStyle="bold"
             android:typeface="monospace"
             app:fontFamily="monospace" />
 
@@ -111,9 +112,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center|top"
-
             android:text="Stressin määrä"
             android:textSize="20dp"
+            android:textStyle="bold"
             android:typeface="monospace"
             app:fontFamily="monospace" />
 
