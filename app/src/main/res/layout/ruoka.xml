@@ -32,7 +32,6 @@
         android:id="@+id/btnVaihda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
         android:background="@drawable/calendericon" />
     </LinearLayout>
 
@@ -46,7 +45,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical">
@@ -56,7 +55,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="Kuinka monta kourallista söit marjoja/kasviksia/hedelmiä?"
-                    android:textSize="16dp"
+                    android:textSize="20dp"
                     android:typeface="monospace"
                     app:fontFamily="monospace" />
 
@@ -76,7 +75,7 @@
                     android:background="@drawable/round_buttons_blue"
                     android:text="-"
                     android:textColor="#ffff"
-                    android:textSize="30sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/tvCounter"
@@ -85,7 +84,7 @@
                     android:layout_gravity="center"
                     android:layout_margin="18dp"
                     android:text="0"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     android:textStyle="bold"
                     android:typeface="monospace" />
 
@@ -97,7 +96,7 @@
                     android:background="@drawable/round_buttons_blue"
                     android:text="+"
                     android:textColor="#ffff"
-                    android:textSize="30sp" />
+                    android:textSize="20sp" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/floatingActionButton"
@@ -108,21 +107,20 @@
                     app:backgroundTint="#00b7c7"
                     app:srcCompat="@android:drawable/ic_dialog_info" />
             </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:gravity="center"
-                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="20dp"
+                    />
             <TextView
                 android:id="@+id/tvMeal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
                 android:text="Valitse kellonaika:"
-                android:textSize="18sp"
+                android:textSize="20dp"
                 android:typeface="monospace"
                 app:fontFamily="monospace" />
 
@@ -130,8 +128,8 @@
 
                 <TimePicker
                     android:id="@+id/timepicker"
-                    android:layout_width="314dp"
-                    android:layout_height="167dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:timePickerMode="spinner" />
 
             </LinearLayout>

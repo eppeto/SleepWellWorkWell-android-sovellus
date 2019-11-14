@@ -26,7 +26,8 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:typeface="monospace"
-            app:fontFamily="monospace" />
+            app:fontFamily="monospace"
+            />
 
         <ImageButton
             android:id="@+id/btnVaihdaUni"
@@ -43,21 +44,22 @@
             android:layout_weight="3"
             android:gravity="center"
             android:orientation="vertical">
+
+
         <TextView
             android:id="@+id/editTextUni"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_margin="20dp"
             android:text="Unen laatu"
-            android:textSize="18sp"
+            android:textSize="20dp"
             android:typeface="monospace"
             app:fontFamily="monospace" />
 
         <RadioGroup
             android:id="@+id/radioGroupUni"
-            android:layout_width="fill_parent"
-            android:layout_height="110dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center">
 
             <RadioButton
@@ -67,7 +69,7 @@
                 android:onClick="checkButton"
                 android:text="Erinomainen  "
                 android:textColor="#4CAF50"
-                android:textSize="18sp"
+                android:textSize="20dp"
                 android:textStyle="bold"
                 android:typeface="monospace"
                 android:drawableRight="@drawable/good"/>
@@ -79,7 +81,7 @@
                 android:onClick="checkButton"
                 android:text="Hyvä         "
                 android:textColor="#CDDC39"
-                android:textSize="18sp"
+                android:textSize="20dp"
                 android:textStyle="bold"
                 android:typeface="monospace"
                 android:drawableRight="@drawable/neutral"/>
@@ -91,30 +93,34 @@
                 android:onClick="checkButton"
                 android:text="Huono        "
                 android:textColor="#FF0000"
-                android:textSize="18sp"
+                android:textSize="20dp"
                 android:textStyle="bold"
                 android:typeface="monospace"
                 android:drawableRight="@drawable/bad"/>
 
         </RadioGroup>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="20dp"
+                />
 
         <TextView
             android:id="@+id/editTextStressi"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginTop="40dp"
-            android:layout_margin="20dp"
-            android:text="Stressin määrä"
-            android:textSize="18sp"
+            android:gravity="center|top"
 
+            android:text="Stressin määrä"
+            android:textSize="20dp"
             android:typeface="monospace"
             app:fontFamily="monospace" />
 
         <RadioGroup
             android:id="@+id/radioGroupStressi"
-            android:layout_width="fill_parent"
-            android:layout_height="110dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center">
 
             <RadioButton
@@ -124,7 +130,7 @@
                 android:onClick="checkButton"
                 android:text="Ei ollenkaan "
                 android:textColor="#4CAF50"
-                android:textSize="18sp"
+                android:textSize="20dp"
                 android:textStyle="bold"
                 android:typeface="monospace"
                 android:drawableRight="@drawable/good"/>
@@ -136,7 +142,7 @@
                 android:onClick="checkButton"
                 android:text="Sopiva       "
                 android:textColor="#CDDC39"
-                android:textSize="18sp"
+                android:textSize="20dp"
                 android:textStyle="bold"
                 android:typeface="monospace"
                 android:drawableRight="@drawable/neutral"/>
@@ -148,7 +154,7 @@
                 android:onClick="checkButton"
                 android:text="Liikaa       "
                 android:textColor="#FF0000"
-                android:textSize="18sp"
+                android:textSize="20dp"
                 android:textStyle="bold"
                 android:typeface="monospace"
                 android:drawableRight="@drawable/bad"/>
