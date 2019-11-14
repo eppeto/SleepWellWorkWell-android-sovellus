@@ -50,7 +50,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("create table " + TABLE_RUOKA_NAME +" (RUOKAILU_ID INTEGER PRIMARY KEY AUTOINCREMENT,PVM INTEGER,MAARA INTEGER,KELLO INTEGER)");
         db.execSQL("create table " + TABLE_UNISTRESSI_NAME +" (UNISTRESSI_ID INTEGER PRIMARY KEY AUTOINCREMENT,UNI_LAATU_ID INTEGER,STRESSI_MAARA_ID INTEGER,PVM INTEGER)");
 
-        db.execSQL("INSERT INTO " + TABLE_LIIKUNTA_NAME + "(TYYPPI,PVM,KESTO) VALUES (insertData_liikunta(tyyppi),insertData_liikunta(pvm),insertData_liikunta(kesto))");
+       // db.execSQL("INSERT INTO " + TABLE_LIIKUNTA_NAME + "(TYYPPI,PVM,KESTO) VALUES (insertData_liikunta(tyyppi),insertData_liikunta(pvm),insertData_liikunta(kesto))");
 
     }
 

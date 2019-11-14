@@ -193,7 +193,9 @@ public class Liikunta extends AppCompatActivity {
         btnTallenna.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               boolean isInserted = db.insertData_liikunta(tyyppi,textDateSport.getText().toString(),hp.toString()+mp.toString());
+                String kesto = (String.valueOf(hp.getValue())+String.valueOf(mp.getValue()));
+
+               boolean isInserted = db.insertData_liikunta(tyyppi,textDateSport.getText().toString(),kesto);
                 if (isInserted = true){
                     String text = "Tiedot Tallennettu";
                     Toast.makeText(Liikunta.this, text, Toast.LENGTH_SHORT).show();
