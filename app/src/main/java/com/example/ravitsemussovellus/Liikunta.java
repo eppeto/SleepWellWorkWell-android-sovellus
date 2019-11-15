@@ -65,7 +65,7 @@ public class Liikunta extends AppCompatActivity {
                                           int dayOfMonth) {
 
                         int s = monthOfYear + 1;
-                        String a = dayOfMonth + "."+ s +"."+ year;
+                        String a = dayOfMonth + "/"+ s +"/"+ year;
                         textDateSport.setText(a);
                     }
                 };
