@@ -7,6 +7,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import java.sql.Date;
+import java.time.DateTimeException;
+import java.time.format.DateTimeFormatter;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     // annetaan tietokannalle nimi
@@ -46,9 +50,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // alla oleva funktio luo tyhjät taulut tietokantaan soluineen
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + TABLE_LIIKUNTA_NAME +" (LIIKUNTA_ID INTEGER PRIMARY KEY AUTOINCREMENT,TYYPPI STRING,PVM INTEGER,KESTO INTEGER)");
-        db.execSQL("create table " + TABLE_RUOKA_NAME +" (RUOKAILU_ID INTEGER PRIMARY KEY AUTOINCREMENT,PVM INTEGER,MAARA INTEGER,KELLO INTEGER)");
-        db.execSQL("create table " + TABLE_UNISTRESSI_NAME +" (UNISTRESSI_ID INTEGER PRIMARY KEY AUTOINCREMENT,UNI_LAATU_ID INTEGER,STRESSI_MAARA_ID INTEGER,PVM INTEGER)");
+        db.execSQL("create table " + TABLE_LIIKUNTA_NAME +" (LIIKUNTA_ID INTEGER PRIMARY KEY AUTOINCREMENT,TYYPPI STRING,PVM DATETIME,KESTO DATETIME)");
+        db.execSQL("create table " + TABLE_RUOKA_NAME +" (RUOKAILU_ID INTEGER PRIMARY KEY AUTOINCREMENT,PVM DATETIME,MAARA INTEGER,KELLO DATETIME)");
+        db.execSQL("create table " + TABLE_UNISTRESSI_NAME +" (UNISTRESSI_ID INTEGER PRIMARY KEY AUTOINCREMENT,UNI_LAATU_ID INTEGER,STRESSI_MAARA_ID INTEGER,PVM DATETIME)");
 
        // db.execSQL("INSERT INTO " + TABLE_LIIKUNTA_NAME + "(TYYPPI,PVM,KESTO) VALUES (insertData_liikunta(tyyppi),insertData_liikunta(pvm),insertData_liikunta(kesto))");
 
@@ -78,7 +82,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
         // ravintotietojen lisäys tietokantaan
-    public boolean insertData_ruoka(String pvm, int maara, int kello){
+    public boolean insertData_ruoka(String pvm, int maara, String kello){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_2_RUOKA, pvm);

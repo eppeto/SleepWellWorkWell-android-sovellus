@@ -193,7 +193,7 @@ public class Liikunta extends AppCompatActivity {
         btnTallenna.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String kesto = (String.valueOf(hp.getValue())+String.valueOf(mp.getValue()));
+                String kesto = (hp.getValue() + ":" + mp.getValue());
 
                boolean isInserted = db.insertData_liikunta(tyyppi,textDateSport.getText().toString(),kesto);
                 if (isInserted = true){

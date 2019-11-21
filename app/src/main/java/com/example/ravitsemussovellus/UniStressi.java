@@ -94,7 +94,7 @@ public class UniStressi extends AppCompatActivity {
 
                 radioButton = findViewById(radioId);*/
                     // Databaseen vienti ----------- HUOM!!!! radiobuttoneissa (unen laatu ja stressin määrä) on bugi!! PITÄÄ KORJATA! -----------------
-                boolean isInserted = db.insertData_unistressi(radioGroup.getId(),radioGroup2.getId(),textDateUni.getText().toString());
+                boolean isInserted = db.insertData_unistressi(radioGroup.getCheckedRadioButtonId(),radioGroup2.getCheckedRadioButtonId(),textDateUni.getText().toString());
                 if (isInserted = true){
                     String text = "Tiedot Tallennettu";
                     Toast.makeText(UniStressi.this, text, Toast.LENGTH_SHORT).show();

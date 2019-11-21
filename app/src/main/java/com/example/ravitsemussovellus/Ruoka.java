@@ -153,8 +153,10 @@ public class Ruoka extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                String aika = (timepicker.getCurrentHour() + ":" + timepicker.getCurrentMinute());
+
                 // Databaseen vienti. ---------------- HUOM!! KELLONAJASSA ON BUGI PITÄÄ KORJATA!!!! --------------------
-                boolean isInserted = db.insertData_ruoka(textDateRuoka.getText().toString(),counter,timepicker.getCurrentHour()+timepicker.getCurrentMinute());
+                boolean isInserted = db.insertData_ruoka(textDateRuoka.getText().toString(),counter,aika);
                 if (isInserted = true){
                     String text = "Tiedot Tallennettu";
                     Toast.makeText(Ruoka.this, text, Toast.LENGTH_SHORT).show();
