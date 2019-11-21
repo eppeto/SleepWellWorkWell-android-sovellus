@@ -33,8 +33,12 @@
         android:theme="@style/AppDialogTheme"/>
     <activity android:theme="@style/Theme.AppCompat.Light"
         android:label="@string/title_activity_raportit"
-        android:name=".RaportitActivity"
-        android:screenOrientation="portrait"/>
+        android:name=".Raportit"
+        android:screenOrientation="portrait">
+        <intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
         <activity android:name=".MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>

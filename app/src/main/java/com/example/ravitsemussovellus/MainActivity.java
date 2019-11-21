@@ -1,13 +1,11 @@
 package com.example.ravitsemussovellus;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import static android.provider.AlarmClock.EXTRA_MESSAGE;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     DatabaseHelper myDb;
@@ -45,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick (View v) {
                     // Raportit-activityn (näkymän) avaus
                     Intent myIntent = new Intent(MainActivity.this,
-                            RaportitActivity.class);
+                            Raportit.class);
                     startActivity(myIntent);
                 }
         });
