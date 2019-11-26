@@ -1,6 +1,272 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    tools:context=".Paiva"/>
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Paiva">
+
+    // Uni ja stressi
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        // Otsikko
+        <TextView
+            android:id="@+id/UnijastressiOtsikko"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Uni ja Stressi"
+            android:textSize="30dp"
+            android:textColor="@color/black" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        // unen laatu
+        <TextView
+            android:id="@+id/Unenlaatu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Unen laatu"
+            android:textSize="20dp"
+            android:textColor="@color/black" />
+        // unen laatu hymiö
+        <ImageView
+            android:id="@+id/unikuva"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/good" />
+
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        // stressin määrä teksti
+        <TextView
+            android:id="@+id/stressimaara"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stressin määrä"
+            android:textSize="20dp"
+            android:textColor="@color/black"/>
+        // stressin määrä hymiö
+        <ImageView
+            android:id="@+id/stressikuva"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bad" />
+    </TableRow>
+
+    //Ruokailu
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        // Ruokailu otsikko
+        <TextView
+            android:id="@+id/RuokailuOtsikko"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ruokailu"
+            android:textSize="30dp"
+            android:textColor="@color/black" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        // Ruokailujen lukumäärä teksti
+        <TextView
+            android:id="@+id/ruokamaara"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ruokailujen lukumäärä"
+            android:textSize="20dp"
+            android:textColor="@color/black" />
+        // Ruokailujen lukumäärä luku (VAIHTUVA)
+        <TextView
+            android:id="@+id/ruokamaaraLuku"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="3"
+            android:textSize="20dp"
+            android:textColor="@color/black" />
+        // Ruokailujen lukumäärä hymiö (VAIHTUVA)
+        <ImageView
+            android:id="@+id/ruokamaarakuva"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/good" />
+
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        // Marjakourallisten lukumäärä teksti
+        <TextView
+            android:id="@+id/marjojenmaara"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Marjakouralliset"
+            android:textSize="20dp"
+            android:textColor="@color/black"/>
+        // Marjakourallisten lukumäärä luku (VAIHTUVA)
+        <TextView
+            android:id="@+id/marjamaaraLuku"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="0"
+            android:textSize="20dp"
+            android:textColor="@color/black" />
+        // Marjakourallisten lukumäärä hymiö (VAIHTUVA)
+        <ImageView
+            android:id="@+id/marjakuva"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bad" />
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        // Ruokailujen väli teksti
+        <TextView
+            android:id="@+id/ruokailuvali"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ruokailujen väli"
+            android:textSize="20dp"
+            android:textColor="@color/black"/>
+        // Ruokailujen väli aika (VAIHTUVA)
+        <TextView
+            android:id="@+id/ruokailuvaliLuku"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="4h 33min"
+            android:textSize="20dp"
+            android:textColor="@color/black" />
+        // Ruokailujen väli hymiö (VAIHTUVA)
+        <ImageView
+            android:id="@+id/ruokailuvaliKuva"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/neutral" />
+    </TableRow>
+    //Liikunta
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        // Liikunta otsikko
+        <TextView
+            android:id="@+id/LiikuntaOtsikko"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Liikunta"
+            android:textSize="30dp"
+            android:textColor="@color/black" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        // Liikunnan yhteiskesto teksti
+        <TextView
+            android:id="@+id/liikuntamaara"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Liikunnan yhteiskesto"
+            android:textSize="20dp"
+            android:textColor="@color/black" />
+        // Liikunnan yhteiskesto luku (VAIHTUVA)
+        <TextView
+            android:id="@+id/liikuntamaaraLuku"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="5h"
+            android:textSize="20dp"
+            android:textColor="@color/black" />
+        // Liikunnan yhteiskesto hymiö (VAIHTUVA)
+        <ImageView
+            android:id="@+id/liikuntamaaraKuva"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/good" />
+
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        // Kestävyys teksti
+        <TextView
+            android:id="@+id/kestavyysTeksti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Kestävyys"
+            android:textSize="20dp"
+            android:textColor="@color/black"/>
+        // Kestävyys luku (VAIHTUVA)
+        <TextView
+            android:id="@+id/kestavyysLuku"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="3h 20min"
+            android:textSize="20dp"
+            android:textColor="@color/black" />
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        // Lihasvoima teksti
+        <TextView
+            android:id="@+id/lihasvoimaTeksti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Lihasvoima"
+            android:textSize="20dp"
+            android:textColor="@color/black"/>
+        // Lihasvoima luku (VAIHTUVA)
+        <TextView
+            android:id="@+id/lihasvoimaLuku"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="1h 10min"
+            android:textSize="20dp"
+            android:textColor="@color/black" />
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        // Liikkuvuus teksti
+        <TextView
+            android:id="@+id/liikkuvuusTeksti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="Liikkuvuus"
+            android:textSize="20dp"
+            android:textColor="@color/black"/>
+        // Liikkuvuus luku (VAIHTUVA)
+        <TextView
+            android:id="@+id/liikkuvuusLuku"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="30min"
+            android:textSize="20dp"
+            android:textColor="@color/black" />
+    </TableRow>
+</TableLayout>
