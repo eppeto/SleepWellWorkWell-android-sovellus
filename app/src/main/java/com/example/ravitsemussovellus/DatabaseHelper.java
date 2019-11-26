@@ -109,26 +109,89 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public Cursor getLiikuntaData(){
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res_liikunta = db.rawQuery("SELECT * from "+TABLE_LIIKUNTA_NAME,null);
+    public Cursor getLiikuntaData1(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res_liikunta_col1 = db.rawQuery("SELECT " + COL_1_LIIKUNTA + " FROM " + TABLE_LIIKUNTA_NAME,null);
 
-        return res_liikunta;
+        return res_liikunta_col1;
+    }
+    public Cursor getLiikuntaData2(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res_liikunta_col2 = db.rawQuery("SELECT " + COL_2_LIIKUNTA + " FROM " + TABLE_LIIKUNTA_NAME,null);
+
+        return res_liikunta_col2;
+    }
+    public Cursor getLiikuntaData3(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res_liikunta_col3 = db.rawQuery("SELECT " + COL_3_LIIKUNTA + " FROM " + TABLE_LIIKUNTA_NAME,null);
+
+        return res_liikunta_col3;
+    }
+    public Cursor getLiikuntaData4(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res_liikunta_col4 = db.rawQuery("SELECT " + COL_4_LIIKUNTA + " FROM " + TABLE_LIIKUNTA_NAME,null);
+
+        return res_liikunta_col4;
     }
 
-    public Cursor getRuokaData(){
+    public Cursor getRuokaData1(){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res_ruoka = db.rawQuery("SELECT * from "+TABLE_RUOKA_NAME,null);
+        Cursor res_ruoka_col1 = db.rawQuery("SELECT " + COL_1_RUOKA + " FROM " + TABLE_RUOKA_NAME,null);
 
-        return res_ruoka;
+        return res_ruoka_col1;
+
+    }
+    public Cursor getRuokaData2(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res_ruoka_col2 = db.rawQuery("SELECT " + COL_2_RUOKA + " FROM " + TABLE_RUOKA_NAME,null);
+
+        return res_ruoka_col2;
+
+    }
+    public Cursor getRuokaData3(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res_ruoka_col3 = db.rawQuery("SELECT " + COL_3_RUOKA + " FROM " + TABLE_RUOKA_NAME,null);
+
+        return res_ruoka_col3;
+
+    }
+    public Cursor getRuokaData4(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res_ruoka_col4 = db.rawQuery("SELECT " + COL_4_RUOKA + " FROM " + TABLE_RUOKA_NAME,null);
+
+        return res_ruoka_col4;
 
     }
 
-    public Cursor getUnistressiData(){
+    public Cursor getUnistressiData1(){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res_unistressi = db.rawQuery("SELECT * from "+TABLE_UNISTRESSI_NAME,null);
+        Cursor res_unistressi_col1 = db.rawQuery("SELECT " + COL_1_UNISTRESSI + " FROM " + TABLE_UNISTRESSI_NAME,null);
 
-        return res_unistressi;
+        return res_unistressi_col1;
+
+    }
+
+    public Cursor getUnistressiData2(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res_unistressi_col2 = db.rawQuery("SELECT " + COL_2_UNISTRESSI + " FROM " + TABLE_UNISTRESSI_NAME,null);
+
+        return res_unistressi_col2;
+
+    }
+
+    public Cursor getUnistressiData3(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res_unistressi_col3 = db.rawQuery("SELECT " + COL_3_UNISTRESSI + " FROM " + TABLE_UNISTRESSI_NAME,null);
+
+        return res_unistressi_col3;
+
+    }
+
+    public Cursor getUnistressiData4(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res_unistressi_col4 = db.rawQuery("SELECT " + COL_4_UNISTRESSI + " FROM " + TABLE_UNISTRESSI_NAME,null);
+
+        return res_unistressi_col4;
 
     }
 }
