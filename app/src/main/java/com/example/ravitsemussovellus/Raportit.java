@@ -4,25 +4,31 @@ import android.app.AlertDialog;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import java.time.LocalDateTime;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
-public class Raportit extends AppCompatActivity {
+public class Raportit extends AppCompatActivity{
     DatabaseHelper db;
     public int liikunta_id;
     public String tyyppi;
-    public LocalDateTime pvm;
-    DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern ("dd-MM-yyyy");
-    public LocalDateTime kesto;
+    SimpleDateFormat formatter1 = new SimpleDateFormat ("dd/MM/yyyy");
+    public Date pvm;
     DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern ("HH:mm");
+    public String kesto;
+    private static TextView litxt;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        LiikuntaHaku ();
         db = new DatabaseHelper (this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_raportit);
@@ -48,8 +54,12 @@ public class Raportit extends AppCompatActivity {
             while(res.moveToNext ()){
               liikunta_id = res.getInt (0);
               tyyppi = res.getString (1);
-              pvm = LocalDateTime.parse (res.getString (2),formatter1);
-              kesto = LocalDateTime.parse (res.getString (3),formatter2);
+                try {
+                    pvm = formatter1.parse (res.getString (2));
+                } catch (ParseException e) {
+                    e.printStackTrace ();
+                }
+                kesto = res.getString (3);
             }
         }
 

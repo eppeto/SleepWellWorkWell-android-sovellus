@@ -1,6 +1,7 @@
 package com.example.ravitsemussovellus;
 
 import android.content.Context;
+import android.util.SparseArray;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -9,6 +10,11 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 
 
 class Adapter extends FragmentStatePagerAdapter {
+    SparseArray<Viikko> myPagerFragments;
+
+    {
+        myPagerFragments = new SparseArray<> ();
+    }
 
     public Context context;
     // tab titles

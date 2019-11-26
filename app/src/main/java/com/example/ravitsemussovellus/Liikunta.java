@@ -4,17 +4,15 @@ import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.ImageButton;
 import android.widget.NumberPicker;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
-import androidx.annotation.ColorInt;
-import androidx.annotation.ColorRes;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -49,7 +47,7 @@ public class Liikunta extends AppCompatActivity {
         infoButton= findViewById(R.id.floatingActionButton);
 
         //datepicker
-        SimpleDateFormat currentDate = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat currentDate = new SimpleDateFormat("dd-MM-yyyy");
         Date todayDate = new Date();
         String thisDate = currentDate.format(todayDate);
         textDateSport.setText(thisDate);
@@ -65,7 +63,7 @@ public class Liikunta extends AppCompatActivity {
                                           int dayOfMonth) {
 
                         int s = monthOfYear + 1;
-                        String a = dayOfMonth + "/"+ s +"/"+ year;
+                        String a = dayOfMonth + "-"+ s +"-"+ year;
                         textDateSport.setText(a);
                     }
                 };
