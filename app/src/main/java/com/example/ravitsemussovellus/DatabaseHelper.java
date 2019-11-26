@@ -2,14 +2,11 @@ package com.example.ravitsemussovellus;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
-
-import java.sql.Date;
-import java.time.DateTimeException;
-import java.time.format.DateTimeFormatter;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -110,5 +107,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         else {
             return true;
         }
+    }
+
+    public Cursor getLiikuntaData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res_liikunta = db.rawQuery("SELECT * from "+TABLE_LIIKUNTA_NAME,null);
+
+        return res_liikunta;
+    }
+
+    public Cursor getRuokaData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res_ruoka = db.rawQuery("SELECT * from "+TABLE_RUOKA_NAME,null);
+
+        return res_ruoka;
+
+    }
+
+    public Cursor getUnistressiData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res_unistressi = db.rawQuery("SELECT * from "+TABLE_UNISTRESSI_NAME,null);
+
+        return res_unistressi;
+
     }
 }
