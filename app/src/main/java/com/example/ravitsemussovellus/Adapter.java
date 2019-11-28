@@ -14,11 +14,16 @@ class Adapter extends FragmentStatePagerAdapter {
     public String tyyppi;
     public Date pvm;
     public String kesto;
-   // SparseArray<Viikko> myPagerFragments;
 
-   // {
-    //    myPagerFragments = new SparseArray<> ();
-    //}
+    public int ruokailu_id;
+    public int maara_ruoka;
+    public Date pvm_ruoka;
+    public String kello_ruoka;
+
+    public int unistressi_id;
+    public int unilaatu;
+    public int stressi;
+    public Date pvm_unistressi;
 
     public Context context;
     // tab titles
@@ -40,13 +45,35 @@ class Adapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new Paiva ();
+                Paiva p = new Paiva ();
+                p.liikunta_id = liikunta_id;
+                p.tyyppi = tyyppi;
+                p.pvm = pvm;
+                p.kesto = kesto;
+                p.ruokailu_id = ruokailu_id;
+                p.maara_ruoka = maara_ruoka;
+                p.pvm_ruoka = pvm_ruoka;
+                p.kello_ruoka = kello_ruoka;
+                p.unistressi_id = unistressi_id;
+                p.unilaatu = unilaatu;
+                p.stressi = stressi;
+                p.pvm_unistressi = pvm_unistressi;
+
+                return p;
             case 1:
                 Viikko v = new Viikko ();
                 v.liikunta_id = liikunta_id;
                 v.tyyppi = tyyppi;
                 v.pvm = pvm;
                 v.kesto = kesto;
+                v.ruokailu_id = ruokailu_id;
+                v.maara_ruoka = maara_ruoka;
+                v.pvm_ruoka = pvm_ruoka;
+                v.kello_ruoka = kello_ruoka;
+                v.unistressi_id = unistressi_id;
+                v.unilaatu = unilaatu;
+                v.stressi = stressi;
+                v.pvm_unistressi = pvm_unistressi;
 
                 return v;
             default:

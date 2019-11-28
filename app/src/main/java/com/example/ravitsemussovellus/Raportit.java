@@ -5,31 +5,43 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class Raportit extends AppCompatActivity{
     DatabaseHelper db;
+    SimpleDateFormat formatter1 = new SimpleDateFormat ("dd/MM/yyyy");
+    //    Kellonaikaparsija alla (ei välttämättä tarvita)
+    //    DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern ("HH:mm");
+
+
     public int liikunta_id;
     public String tyyppi;
-    SimpleDateFormat formatter1 = new SimpleDateFormat ("dd/MM/yyyy");
     public Date pvm;
-    DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern ("HH:mm");
     public String kesto;
-    private static TextView litxt;
+
+    public int ruokailu_id;
+    public int maara_ruoka;
+    public Date pvm_ruoka;
+    public String kello_ruoka;
+
+    public int unistressi_id;
+    public int unilaatu;
+    public int stressi;
+    public Date pvm_unistressi;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         LiikuntaHaku ();
+        RuokaHaku ();
+        UniStressiHaku ();
         db = new DatabaseHelper (this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_raportit);
@@ -40,6 +52,14 @@ public class Raportit extends AppCompatActivity{
         adapter.tyyppi = tyyppi;
         adapter.pvm = pvm;
         adapter.kesto = kesto;
+        adapter.ruokailu_id = ruokailu_id;
+        adapter.maara_ruoka = maara_ruoka;
+        adapter.pvm_ruoka = pvm_ruoka;
+        adapter.kello_ruoka = kello_ruoka;
+        adapter.unistressi_id = unistressi_id;
+        adapter.unilaatu = unilaatu;
+        adapter.stressi = stressi;
+        adapter.pvm_unistressi = pvm_unistressi;
         viewPager.setAdapter(adapter);
 
         if (getSupportActionBar() != null){
@@ -71,6 +91,55 @@ public class Raportit extends AppCompatActivity{
 
 
     }
+
+    public void RuokaHaku() {
+        db = new DatabaseHelper (this);
+        Cursor res = db.getRuokaData ();
+        if(res.getCount () == 0) {
+            // viesti jos tietokanta tyhjä
+            showMessage ("error", "no data found");
+            return;
+        }
+        else{
+            while(res.moveToNext ()){
+                ruokailu_id = res.getInt (0);
+                try {
+                    pvm_ruoka = formatter1.parse (res.getString (1));
+                } catch (ParseException e) {
+                    e.printStackTrace ();
+                }
+                maara_ruoka = res.getInt (2);
+                kello_ruoka = res.getString (3);
+            }
+        }
+
+
+    }
+
+    public void UniStressiHaku() {
+        db = new DatabaseHelper (this);
+        Cursor res = db.getUnistressiData ();
+        if(res.getCount () == 0) {
+            // viesti jos tietokanta tyhjä
+            showMessage ("error", "no data found");
+            return;
+        }
+        else{
+            while(res.moveToNext ()){
+                unistressi_id = res.getInt (0);
+                unilaatu = res.getInt (1);
+                stressi = res.getInt (2);
+                try {
+                    pvm_unistressi = formatter1.parse (res.getString (3));
+                } catch (ParseException e) {
+                    e.printStackTrace ();
+                }
+            }
+        }
+
+
+    }
+
     public void showMessage(String title, String Message){
         AlertDialog.Builder builder;
         builder = new AlertDialog.Builder (this);

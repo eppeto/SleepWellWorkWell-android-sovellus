@@ -30,6 +30,16 @@ public class Viikko extends Fragment implements SearchView.OnQueryTextListener {
     public Date pvm;
     public String kesto;
 
+    public int ruokailu_id;
+    public int maara_ruoka;
+    public Date pvm_ruoka;
+    public String kello_ruoka;
+
+    public int unistressi_id;
+    public int unilaatu;
+    public int stressi;
+    public Date pvm_unistressi;
+
 
 
     @Override
