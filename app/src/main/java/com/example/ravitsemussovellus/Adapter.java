@@ -1,20 +1,24 @@
 package com.example.ravitsemussovellus;
 
 import android.content.Context;
-import android.util.SparseArray;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
+import java.util.Date;
 
 
 class Adapter extends FragmentStatePagerAdapter {
-    SparseArray<Viikko> myPagerFragments;
+    public int liikunta_id;
+    public String tyyppi;
+    public Date pvm;
+    public String kesto;
+   // SparseArray<Viikko> myPagerFragments;
 
-    {
-        myPagerFragments = new SparseArray<> ();
-    }
+   // {
+    //    myPagerFragments = new SparseArray<> ();
+    //}
 
     public Context context;
     // tab titles
@@ -38,7 +42,13 @@ class Adapter extends FragmentStatePagerAdapter {
             case 0:
                 return new Paiva ();
             case 1:
-                return new Viikko ();
+                Viikko v = new Viikko ();
+                v.liikunta_id = liikunta_id;
+                v.tyyppi = tyyppi;
+                v.pvm = pvm;
+                v.kesto = kesto;
+
+                return v;
             default:
                 return null; // shouldn't happen
         }

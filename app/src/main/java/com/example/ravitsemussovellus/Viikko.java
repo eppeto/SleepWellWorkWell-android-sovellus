@@ -1,6 +1,7 @@
 package com.example.ravitsemussovellus;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,23 +10,42 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import java.util.Date;
+
 public class Viikko extends Fragment implements SearchView.OnQueryTextListener {
+
 
     public Viikko() {
         // Required empty public constructor
     }
-    TextView liikuntatxt = (TextView) getActivity ().findViewById (R.id.txt_liikunta_col1);
-    public void setText(String text){
-        liikuntatxt.setText (text);
-    }
+
+
+    //TextView liikuntatxt = getActivity ().findViewById (R.id.txt_liikunta_col1);
+    //public void setText(String text){
+    //    liikuntatxt.setText (liikunta_id);
+    //}
+
+    public int liikunta_id;
+    public String tyyppi;
+    public Date pvm;
+    public String kesto;
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
        // int liikunta_id = ((Raportit)this.getActivity()).liikunta_id;
        // TextView liikuntatxt = (TextView) getActivity ().findViewById (R.id.txt_liikunta_col1);
+        Log.d ("testi", "LIIKUNTA ID =" + liikunta_id);
 
-        return inflater.inflate(R.layout.fragment_viikko, container, false);
+        View view = inflater.inflate(R.layout.fragment_viikko, container, false);
+        TextView txtview_liikunta_id = (TextView) view.findViewById (R.id.txt_liikunta_col1);
+
+        txtview_liikunta_id.setText (kesto);
+
+        return view;
+
 
 
     }

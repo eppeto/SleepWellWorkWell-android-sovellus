@@ -3,6 +3,7 @@ package com.example.ravitsemussovellus;
 import android.app.AlertDialog;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -35,12 +36,17 @@ public class Raportit extends AppCompatActivity{
 
         ViewPager viewPager = findViewById(R.id.viewpager);
         Adapter adapter = new Adapter(this, getSupportFragmentManager());
+        adapter.liikunta_id = liikunta_id;
+        adapter.tyyppi = tyyppi;
+        adapter.pvm = pvm;
+        adapter.kesto = kesto;
         viewPager.setAdapter(adapter);
 
         if (getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
+        Log.d ("testi","liikunta id =" + liikunta_id);
     }
     public void LiikuntaHaku() {
         db = new DatabaseHelper (this);
