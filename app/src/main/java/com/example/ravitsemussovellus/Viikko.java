@@ -50,9 +50,9 @@ public class Viikko extends Fragment implements SearchView.OnQueryTextListener {
         Log.d ("testi", "LIIKUNTA ID =" + liikunta_id);
 
         View view = inflater.inflate(R.layout.fragment_viikko, container, false);
-        TextView txtview_liikunta_id = (TextView) view.findViewById (R.id.txt_liikunta_col1);
+        //TextView txtview_liikunta_id = (TextView) view.findViewById (R.id.txt_liikunta_col1);
 
-        txtview_liikunta_id.setText (kesto);
+        //txtview_liikunta_id.setText (kesto);
 
         return view;
 
