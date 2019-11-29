@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="4dp"
-        android:background="#ed8404">
+        android:background="#00B7C7">
 
         <TextView
             android:layout_width="match_parent"
@@ -18,6 +18,84 @@
             android:gravity="center"
             android:text="Viikon tuloksien yhteenveto"
             android:textColor="#fff" />
+    </TableRow>
+    //Viikonpäivät
+    <TableRow
+        android:id="@+id/row_6"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="1dp"
+        android:background="#00B7C7">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginLeft="1dp"
+            android:background="#00B7C7"
+            android:gravity="center"
+            android:text="Päivä"
+            android:textColor="#fff" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="1dp"
+            android:gravity="center"
+            android:text="Ma"
+            android:textColor="#fff" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="1dp"
+            android:gravity="center"
+            android:text="Ti"
+            android:textColor="#fff" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="1dp"
+            android:gravity="center"
+            android:text="Ke"
+            android:textColor="#fff" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="To"
+            android:textColor="#fff" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="1dp"
+            android:gravity="center"
+            android:text="Pe"
+            android:textColor="#fff" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="1dp"
+            android:gravity="center"
+            android:text="La"
+            android:textColor="#fff" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="1dp"
+            android:gravity="center"
+            android:text="Su"
+            android:textColor="#fff" />
+
     </TableRow>
 // Unitiedot
     <TableRow
@@ -31,76 +109,75 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
-            android:background="#ed8404"
+            android:background="#00B7C7"
             android:gravity="center"
             android:text="Uni"
             android:textColor="#fff" />
         <TextView
+            android:id="@+id/uniMa"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
             android:background="#ed8404"
             android:gravity="center"
-            android:text="Row 2\nColumn 2"
             android:textColor="#fff" />
         <TextView
+            android:id="@+id/uniTi"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
             android:background="#ed8404"
             android:gravity="center"
-            android:text="Row 2\nColumn 3"
             android:textColor="#fff" />
         <TextView
+            android:id="@+id/uniKe"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
             android:background="#ed8404"
             android:gravity="center"
-            android:text="Row 2\nColumn 4"
-            android:textColor="#fff" />
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="1dp"
-            android:layout_weight="1"
-            android:background="#ed8404"
-            android:gravity="center"
-            android:text="Row 2\nColumn 5"
             android:textColor="#fff" />
 
+
         <TextView
+            android:id="@+id/uniTo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="1"
+            android:background="#ed8404"
+            android:gravity="center"
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/uniPe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
             android:background="#ed8404"
             android:gravity="center"
-            android:text="Row 2\nColumn 6"
             android:textColor="#fff" />
         <TextView
+            android:id="@+id/uniLa"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
             android:background="#ed8404"
             android:gravity="center"
-            android:text="Row 2\nColumn 7"
             android:textColor="#fff" />
         <TextView
+            android:id="@+id/UniSu"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
             android:background="#ed8404"
             android:gravity="center"
-            android:text="Row 2\nColumn 8"
-            android:layout_marginRight="2dp"
             android:textColor="#fff" />
     </TableRow>
 //Stressi
@@ -115,73 +192,73 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
-            android:background="#ed8404"
+            android:background="#00B7C7"
             android:gravity="center"
             android:text="Stressi"
             android:textColor="#fff" />
         <TextView
+            android:id="@+id/stressiMa"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
             android:background="#ed8404"
             android:gravity="center"
-            android:text="Row 3\nColumn 2"
             android:textColor="#fff" />
         <TextView
+            android:id="@+id/stressiTi"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
             android:background="#ed8404"
             android:gravity="center"
-            android:text="Row 3\nColumn 3"
             android:textColor="#fff" />
         <TextView
+            android:id="@+id/stressiKe"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
             android:background="#ed8404"
             android:gravity="center"
-            android:text="Row 3\nColumn 4"
             android:textColor="#fff" />
         <TextView
+            android:id="@+id/stressiTo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
             android:background="#ed8404"
             android:gravity="center"
-            android:text="Row 3\nColumn 5"
             android:textColor="#fff" />
         <TextView
+            android:id="@+id/stressiPe"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
             android:background="#ed8404"
             android:gravity="center"
-            android:text="Row 3\nColumn 6"
             android:textColor="#fff" />
         <TextView
+            android:id="@+id/stressiLa"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
             android:background="#ed8404"
             android:gravity="center"
-            android:text="Row 3\nColumn 7"
             android:textColor="#fff" />
 
         <TextView
+            android:id="@+id/stressiSu"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
             android:background="#ed8404"
             android:gravity="center"
-            android:text="Row 3\nColumn 8"
             android:textColor="#fff" />
 
     </TableRow>
@@ -197,76 +274,75 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
-            android:background="#ed8404"
+            android:background="#00B7C7"
             android:gravity="center"
             android:text="Ruoka"
             android:textColor="#fff" />
         <TextView
+            android:id="@+id/ruokaMa"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
             android:background="#ed8404"
             android:gravity="center"
-            android:text="Row 4\nColumn 2"
             android:textColor="#fff" />
         <TextView
+            android:id="@+id/ruokaTi"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
             android:background="#ed8404"
             android:gravity="center"
-            android:text="Row 4\nColumn 3"
             android:textColor="#fff" />
         <TextView
+            android:id="@+id/ruokaKe"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
             android:background="#ed8404"
             android:gravity="center"
-            android:text="Row 4\nColumn 4"
-            android:textColor="#fff" />
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="1dp"
-            android:layout_weight="1"
-            android:background="#ed8404"
-            android:gravity="center"
-            android:text="Row 4\nColumn 5"
             android:textColor="#fff" />
 
+
         <TextView
+            android:id="@+id/ruokaTo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="1"
+            android:background="#ed8404"
+            android:gravity="center"
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/ruokaPe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
             android:background="#ed8404"
             android:gravity="center"
-            android:text="Row 4\nColumn 6"
             android:textColor="#fff" />
         <TextView
+            android:id="@+id/ruokaLa"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
             android:background="#ed8404"
             android:gravity="center"
-            android:text="Row 4\nColumn 7"
             android:textColor="#fff" />
         <TextView
+            android:id="@+id/ruokaSu"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
             android:background="#ed8404"
             android:gravity="center"
-            android:text="Row 4\nColumn 8"
-            android:layout_marginRight="2dp"
             android:textColor="#fff" />
     </TableRow>
 //Liikunta
@@ -281,162 +357,80 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
-            android:background="#ed8404"
+            android:background="#00B7C7"
             android:gravity="center"
             android:text="Liikunta"
             android:textColor="#fff" />
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginLeft="1dp"
-            android:background="#ed8404"
-            android:gravity="center"
-            android:text="Row 5\nColumn 2"
-            android:textColor="#fff" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginLeft="1dp"
-            android:background="#ed8404"
-            android:gravity="center"
-            android:text="Row 5\nColumn 3"
-            android:textColor="#fff" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginLeft="1dp"
-            android:background="#ed8404"
-            android:gravity="center"
-            android:text="Row 5\nColumn 4"
-            android:textColor="#fff" />
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="1dp"
-            android:layout_weight="1"
-            android:background="#ed8404"
-            android:gravity="center"
-            android:text="Row 5\nColumn 5"
-            android:textColor="#fff" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginLeft="1dp"
-            android:background="#ed8404"
-            android:gravity="center"
-            android:text="Row 5\nColumn 6"
-            android:textColor="#fff" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginLeft="1dp"
-            android:background="#ed8404"
-            android:gravity="center"
-            android:text="Row 5\nColumn 7"
-            android:textColor="#fff" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginLeft="1dp"
-            android:background="#ed8404"
-            android:gravity="center"
-            android:text="Row 5\nColumn 8"
-            android:textColor="#fff" />
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/row_6"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="1dp">
-
-        <TextView
+            android:id="@+id/liikuntaMa"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
             android:background="#ed8404"
             android:gravity="center"
-            android:text="Päivä"
             android:textColor="#fff" />
         <TextView
+            android:id="@+id/liikuntaTi"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
             android:background="#ed8404"
             android:gravity="center"
-            android:text="Ma"
             android:textColor="#fff" />
         <TextView
+            android:id="@+id/liikuntaKe"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
             android:background="#ed8404"
             android:gravity="center"
-            android:text="Ti"
-            android:textColor="#fff" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginLeft="1dp"
-            android:background="#ed8404"
-            android:gravity="center"
-            android:text="Ke"
             android:textColor="#fff" />
 
 
         <TextView
+            android:id="@+id/liikuntaTo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginLeft="1dp"
             android:layout_weight="1"
             android:background="#ed8404"
             android:gravity="center"
-            android:text="To"
             android:textColor="#fff" />
 
         <TextView
+            android:id="@+id/liikuntaPe"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
             android:background="#ed8404"
             android:gravity="center"
-            android:text="Pe"
             android:textColor="#fff" />
         <TextView
+            android:id="@+id/liikuntaLa"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
             android:background="#ed8404"
             android:gravity="center"
-            android:text="La"
             android:textColor="#fff" />
         <TextView
+            android:id="@+id/liikuntaSu"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginLeft="1dp"
             android:background="#ed8404"
             android:gravity="center"
-            android:text="Su"
             android:textColor="#fff" />
 
     </TableRow>
+
+
 
 
 </TableLayout>

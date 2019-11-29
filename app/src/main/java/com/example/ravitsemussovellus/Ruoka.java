@@ -80,7 +80,7 @@ public class Ruoka extends AppCompatActivity {
             }
         });
         //datepicker
-        SimpleDateFormat currentDate = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat currentDate = new SimpleDateFormat("dd-MM-yyyy");
         Date todayDate = new Date();
         String thisDate = currentDate.format(todayDate);
         textDateRuoka.setText(thisDate);
@@ -96,7 +96,7 @@ public class Ruoka extends AppCompatActivity {
                                           int dayOfMonth) {
 
                         int s = monthOfYear + 1;
-                        String a = dayOfMonth + "/"+ s +"/"+ year;
+                        String a = dayOfMonth + "-"+ s +"-"+ year;
                         textDateRuoka.setText(a);
                     }
                 };
