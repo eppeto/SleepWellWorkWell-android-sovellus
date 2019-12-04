@@ -10,6 +10,9 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Paiva extends Fragment {
@@ -35,6 +38,8 @@ public class Paiva extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_paiva, container, false);
+        // Päivämääräotsikko
+        TextView paivamaaraotsikko = (TextView) view.findViewById(R.id.PaivamaaraOtsikko);
         // Unen ja stressinmäärä kuvat
         ImageView unenlaatu = (ImageView) view.findViewById(R.id.unikuva);
         ImageView stressimaara = (ImageView) view.findViewById(R.id.stressikuva);
@@ -65,6 +70,10 @@ public class Paiva extends Fragment {
         // stressinmäärä sopiva = 2131296265
         // stressinmäärä liikaa = 2131296263
 
+            // PÄIVÄMÄÄRÄ OTSIKON MUUTTAMINEN KULUVALLE PÄIVÄMÄÄRÄLLE
+        DateFormat df = new SimpleDateFormat("dd.MM.yy");
+        String tanaan = df.format(Calendar.getInstance().getTime());
+        paivamaaraotsikko.setText(tanaan);
 
             // Unen laadun kuvan muuttaminen
         if (unilaatu == 2131296262){

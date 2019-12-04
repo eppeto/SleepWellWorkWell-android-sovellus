@@ -4,19 +4,35 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
-    <TableLayout
-        android:layout_width="fill_parent"
-        android:layout_height="match_parent">
-        <noman.weekcalendar.WeekCalendar
-            android:id="@+id/weekCalendar"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:background="@color/colorPrimary"/>
 <TableLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     tools:context=".Paiva">
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/PaivamaaraOtsikko"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Päivämäärä"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:typeface="monospace"
+            android:gravity="center"/>
+    </TableRow>
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorAccent" />
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="10dp" />
 
     // Uni ja stressi
 
@@ -61,7 +77,7 @@
             android:id="@+id/unikuva"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/good" />
+            android:src="@color/white" />
 
 
     </TableRow>
@@ -85,7 +101,7 @@
             android:id="@+id/stressikuva"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/bad" />
+            android:src="@color/white" />
     </TableRow>
 
     <Space
@@ -142,7 +158,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="3"
+            android:text=""
             android:textColor="@color/black"
             android:textSize="15dp"
             android:typeface="monospace" />
@@ -152,7 +168,7 @@
             android:id="@+id/ruokamaarakuva"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/good" />
+            android:src="@color/white" />
 
 
     </TableRow>
@@ -177,7 +193,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="0"
+            android:text=""
             android:textColor="@color/black"
             android:textSize="15dp"
             android:typeface="monospace" />
@@ -187,7 +203,7 @@
             android:id="@+id/marjakuva"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/bad" />
+            android:src="@color/white" />
     </TableRow>
 
     <TableRow
@@ -210,7 +226,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="4h 33min"
+            android:text=""
             android:textColor="@color/black"
             android:textSize="15dp"
             android:typeface="monospace" />
@@ -220,7 +236,7 @@
             android:id="@+id/ruokailuvaliKuva"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/neutral" />
+            android:src="@color/white" />
     </TableRow>
 
     <Space
@@ -273,7 +289,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="5h"
+            android:text=""
             android:textColor="@color/black"
             android:textSize="15dp"
             android:typeface="monospace" />
@@ -283,7 +299,7 @@
             android:id="@+id/liikuntamaaraKuva"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/good" />
+            android:src="@color/white" />
 
 
     </TableRow>
@@ -309,7 +325,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="3h 20min"
+            android:text=""
             android:textColor="@color/black"
             android:textSize="15dp"
             android:typeface="monospace" />
@@ -336,7 +352,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="1h 10min"
+            android:text=""
             android:textColor="@color/black"
             android:textSize="15dp"
             android:typeface="monospace" />
@@ -363,9 +379,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="30min"
+            android:text=""
             android:textColor="@color/black"
             android:textSize="15dp"
             android:typeface="monospace" />
     </TableRow>
-</TableLayout></TableLayout></RelativeLayout>
+</TableLayout></RelativeLayout>
