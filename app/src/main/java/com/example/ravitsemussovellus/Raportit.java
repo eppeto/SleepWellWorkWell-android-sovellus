@@ -11,19 +11,21 @@ import androidx.viewpager.widget.ViewPager;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Raportit extends AppCompatActivity{
     DatabaseHelper db;
-    SimpleDateFormat formatter1 = new SimpleDateFormat ("dd/MM/yyyy");
+    SimpleDateFormat formatter1 = new SimpleDateFormat ("dd-MM-yyyy");
     //    Kellonaikaparsija alla (ei välttämättä tarvita)
     //    DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern ("HH:mm");
 
 
-    public int liikunta_id;
-    public String tyyppi;
-    public Date pvm;
-    public String kesto;
+    public List<Integer> liikunta_id = new ArrayList<Integer> ();
+    public List<String> tyyppi = new ArrayList<String> ();
+    public List<String> pvm = new ArrayList<String> ();
+    public List<String> kesto = new ArrayList<String> ();
 
     public int ruokailu_id;
     public int maara_ruoka;
@@ -39,7 +41,7 @@ public class Raportit extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        LiikuntaHaku ();
+        LiikuntaHakuTanaan ();
         RuokaHaku ();
         UniStressiHaku ();
         db = new DatabaseHelper (this);
@@ -67,26 +69,49 @@ public class Raportit extends AppCompatActivity{
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
         Log.d ("testi","liikunta id =" + liikunta_id);
+        Log.d("pvm = ",pvm.toString ());
     }
-    public void LiikuntaHaku() {
+    // public void LiikuntaHaku() {
+    //    db = new DatabaseHelper (this);
+    //     Cursor res = db.getLiikuntaData ();
+    //     if(res.getCount () == 0) {
+    //         // viesti jos tietokanta tyhjä
+    //         showMessage ("error", "no data found");
+    //         return;
+    //     }
+    //     else{
+    //         while(res.moveToNext ()){
+    //           liikunta_id = res.getInt (0);
+    //           tyyppi = res.getString (1);
+    //             try {
+    //                  pvm = formatter1.parse (res.getString (2));
+    //             } catch (ParseException e) {
+    //                 e.printStackTrace ();
+    //             }
+    //             kesto = res.getString (3);
+    //         }
+    //    }
+    //
+    //
+    // }
+    public void LiikuntaHakuTanaan() {
         db = new DatabaseHelper (this);
-        Cursor res = db.getLiikuntaData ();
-        if(res.getCount () == 0) {
+        Cursor cursor_liikunta = db.getLiikuntaDataTanaan ();
+        if(cursor_liikunta.getCount () == 0) {
             // viesti jos tietokanta tyhjä
             showMessage ("error", "no data found");
             return;
         }
         else{
-            while(res.moveToNext ()){
-              liikunta_id = res.getInt (0);
-              tyyppi = res.getString (1);
-                try {
-                    pvm = formatter1.parse (res.getString (2));
-                } catch (ParseException e) {
-                    e.printStackTrace ();
-                }
-                kesto = res.getString (3);
+            cursor_liikunta.moveToFirst ();
+            while(!cursor_liikunta.isAfterLast ()){
+                liikunta_id.add(cursor_liikunta.getInt (0));
+                tyyppi.add(cursor_liikunta.getString (1));
+                pvm.add(cursor_liikunta.getString (2));
+                kesto.add(cursor_liikunta.getString (3));
+                cursor_liikunta.moveToNext ();
             }
+            cursor_liikunta.close ();
         }
 
 

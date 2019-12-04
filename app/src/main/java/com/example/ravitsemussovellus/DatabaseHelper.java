@@ -129,4 +129,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return res_unistressi;
     }
+    public Cursor getLiikuntaDataTanaan(){
+        SQLiteDatabase db = this.getReadableDatabase ();
+        String query = "SELECT * FROM " +TABLE_LIIKUNTA_NAME +  " WHERE date (datetime('now', 'localtime'))";
+        Cursor cursor_liikunta = db.rawQuery (query, null);
+        return  cursor_liikunta;
+    }
+
 }

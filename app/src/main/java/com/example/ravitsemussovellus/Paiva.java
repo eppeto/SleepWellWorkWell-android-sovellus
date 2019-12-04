@@ -12,17 +12,19 @@ import androidx.fragment.app.Fragment;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 public class Paiva extends Fragment {
     public Paiva() {
         // Required empty public constructor
     }
-    public int liikunta_id;
-    public String tyyppi;
-    public Date pvm;
-    public String kesto;
+    public List<Integer> liikunta_id = new ArrayList<Integer> ();
+    public List<String> tyyppi = new ArrayList<String> ();
+    public List<String> pvm = new ArrayList<String> ();
+    public List<String> kesto = new ArrayList<String> ();
 
     public int ruokailu_id;
     public int maara_ruoka;
@@ -71,8 +73,9 @@ public class Paiva extends Fragment {
         // stressinmäärä liikaa = 2131296263
 
             // PÄIVÄMÄÄRÄ OTSIKON MUUTTAMINEN KULUVALLE PÄIVÄMÄÄRÄLLE
-        DateFormat df = new SimpleDateFormat("dd.MM.yy");
+        DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         String tanaan = df.format(Calendar.getInstance().getTime());
+        String pvm_tanaan = df.format (pvm);
         paivamaaraotsikko.setText(tanaan);
 
             // Unen laadun kuvan muuttaminen
@@ -114,22 +117,30 @@ public class Paiva extends Fragment {
 
 
         // Liikunta
+        if (pvm_tanaan.matches (tanaan) == true) {
 
-        if (tyyppi.equals("kestävyys")){
-            String[] parts = kesto.split(":");
-            kestavyysluku.setText(parts[0]+"h "+parts[1]+"min");
-        }
-        if (tyyppi.equals("liikkuvuus")){
-            String[] parts = kesto.split(":");
-            liikkuvuusluku.setText(parts[0]+"h "+parts[1]+"min");
-        }
-        if (tyyppi.equals("lihasvoima")){
-            String[] parts = kesto.split(":");
-            lihasvoimaluku.setText(parts[0]+"h "+parts[1]+"min");
+            if (tyyppi.equals ("kestävyys")) {
+                String[] parts = kesto.split (":");
+                kestavyysluku.setText (parts[0] + "h " + parts[1] + "min");
+            }
+            if (tyyppi.equals ("liikkuvuus")) {
+                String[] parts = kesto.split (":");
+                liikkuvuusluku.setText (parts[0] + "h " + parts[1] + "min");
+            }
+            if (tyyppi.equals ("lihasvoima")) {
+                String[] parts = kesto.split (":");
+                lihasvoimaluku.setText (parts[0] + "h " + parts[1] + "min");
+            }
+        } else {
+            kestavyysluku.setText ("-");
+            liikkuvuusluku.setText ("-");
+            lihasvoimaluku.setText ("-");
         }
 
-        Log.d("TESTI",tyyppi);
-        Log.d("KESTO",kesto);
+        Log.d("TESTI",tyyppi.toString ());
+        Log.d("KESTO",kesto.toString ());
+        Log.d("pvm =", pvm_tanaan);
+        Log.d("tanaan =", tanaan);
         return view;
     }
 

@@ -12,13 +12,14 @@ import com.github.mikephil.charting.data.LineDataSet;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 class Adapter extends FragmentStatePagerAdapter {
-    public int liikunta_id;
-    public String tyyppi;
-    public Date pvm;
-    public String kesto;
+    public List<Integer> liikunta_id = new ArrayList<Integer> ();
+    public List<String> tyyppi = new ArrayList<String> ();
+    public List<String> pvm = new ArrayList<String> ();
+    public List<String> kesto = new ArrayList<String> ();
 
     public int ruokailu_id;
     public int maara_ruoka;

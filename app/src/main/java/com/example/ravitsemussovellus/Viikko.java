@@ -23,6 +23,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 public class Viikko extends Fragment implements SearchView.OnQueryTextListener {
 
@@ -88,10 +89,10 @@ public class Viikko extends Fragment implements SearchView.OnQueryTextListener {
         return dateFormat.format(tanaan_6 ());
     }
 
-    public int liikunta_id;
-    public String tyyppi;
-    public Date pvm;
-    public String kesto;
+    public List<Integer> liikunta_id = new ArrayList<Integer> ();
+    public List<String> tyyppi = new ArrayList<String> ();
+    public List<String> pvm = new ArrayList<String> ();
+    public List<String> kesto = new ArrayList<String> ();
 
     public int ruokailu_id;
     public int maara_ruoka;
