@@ -88,17 +88,21 @@ public class UniStressi extends AppCompatActivity {
                 /*int radioId=radioGroup.getCheckedRadioButtonId();
 
                 radioButton = findViewById(radioId);*/
-                    // Databaseen vienti ----------- HUOM!!!! radiobuttoneissa (unen laatu ja stressin määrä) on bugi!! PITÄÄ KORJATA! -----------------
-                boolean isInserted = db.insertData_unistressi(radioGroup.getCheckedRadioButtonId(),radioGroup2.getCheckedRadioButtonId(),textDateUni.getText().toString());
-                if (isInserted = true){
-                    String text = "Tiedot Tallennettu";
+                if (radioGroup.getCheckedRadioButtonId() == -1 || radioGroup2.getCheckedRadioButtonId() == -1) {
+                    String text = "Valitse uni- ja stressitiedot!";
                     Toast.makeText(UniStressi.this, text, Toast.LENGTH_SHORT).show();
-                    finish();
-                }
-                else {
-                    String text = "Tietoja ei ole tallennettu!!";
-                    Toast.makeText(UniStressi.this, text, Toast.LENGTH_SHORT).show();
-                    finish();
+                } else{
+                    // Databaseen vienti
+                    boolean isInserted = db.insertData_unistressi(radioGroup.getCheckedRadioButtonId(), radioGroup2.getCheckedRadioButtonId(), textDateUni.getText().toString());
+                    if (isInserted = true) {
+                        String text = "Tiedot Tallennettu";
+                        Toast.makeText(UniStressi.this, text, Toast.LENGTH_SHORT).show();
+                        finish();
+                    } else {
+                        String text = "Tietoja ei ole tallennettu!!";
+                        Toast.makeText(UniStressi.this, text, Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
                 }
             }
         });

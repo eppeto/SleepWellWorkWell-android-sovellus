@@ -31,6 +31,7 @@ public class Liikunta extends AppCompatActivity {
     FloatingActionButton infoButton;
     int day, month, year;
     String tyyppi;
+    Boolean valinta = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +92,7 @@ public class Liikunta extends AppCompatActivity {
                 if (isChecked) {
                     tbtnlihasvoima.setChecked(false);
                     tbtnliikkuvuus.setChecked(false);
+                    valinta = true;
                     tyyppi = "kestävyys";
                     // tausta vaihdetaan
                     tbtnkestavyys.setPadding(5,5,5,5);
@@ -98,6 +100,7 @@ public class Liikunta extends AppCompatActivity {
                 } else {
                     // The toggle is disabled
                     // tausta vaihdetaan takaisin
+                    valinta = false;
                     tbtnkestavyys.setPadding(0,0,0,0);
                     tbtnkestavyys.setBackground(getResources().getDrawable(R.drawable.round_buttons_blue));
                 }
@@ -109,6 +112,7 @@ public class Liikunta extends AppCompatActivity {
                 if (isChecked) {
                     tbtnkestavyys.setChecked(false);
                     tbtnliikkuvuus.setChecked(false);
+                    valinta = true;
                     tyyppi = "lihasvoima";
                     // tausta vaihdetaan
                     tbtnlihasvoima.setPadding(5,5,5,5);
@@ -116,6 +120,7 @@ public class Liikunta extends AppCompatActivity {
                 } else {
                     // The toggle is disabled
                     // tausta vaihdetaan takaisin
+                    valinta = false;
                     tbtnlihasvoima.setPadding(0,0,0,0);
                     tbtnlihasvoima.setBackground(getResources().getDrawable(R.drawable.round_buttons_blue));
                 }
@@ -128,6 +133,7 @@ public class Liikunta extends AppCompatActivity {
                 if (isChecked) {
                     tbtnlihasvoima.setChecked(false);
                     tbtnkestavyys.setChecked(false);
+                    valinta = true;
                     tyyppi = "liikkuvuus";
                     // tausta vaihdetaan
                     tbtnliikkuvuus.setPadding(5,5,5,5);
@@ -135,6 +141,7 @@ public class Liikunta extends AppCompatActivity {
                 } else {
                     // The toggle is disabled
                     // tausta vaihdetaan takaisin
+                    valinta = false;
                     tbtnliikkuvuus.setPadding(0,0,0,0);
                     tbtnliikkuvuus.setBackground(getResources().getDrawable(R.drawable.round_buttons_blue));
                 }
@@ -193,19 +200,23 @@ public class Liikunta extends AppCompatActivity {
             public void onClick(View v) {
                 String kesto = (hp.getValue() + ":" + mp.getValue());
 
-               boolean isInserted = db.insertData_liikunta(tyyppi,textDateSport.getText().toString(),kesto);
-                if (isInserted = true){
-                    String text = "Tiedot Tallennettu";
-                    Toast.makeText(Liikunta.this, text, Toast.LENGTH_SHORT).show();
-                    finish();
-                }
-                else {
-                    String text = "Tietoja ei ole tallennettu!!";
-                    Toast.makeText(Liikunta.this, text, Toast.LENGTH_SHORT).show();
-                    finish();
-                }
+                if (valinta == true) {
+                    boolean isInserted = db.insertData_liikunta(tyyppi, textDateSport.getText().toString(), kesto);
+                    if (isInserted = true) {
+                        String text = "Tiedot Tallennettu";
+                        Toast.makeText(Liikunta.this, text, Toast.LENGTH_SHORT).show();
+                        finish();
+                    } else {
+                        String text = "Tietoja ei ole tallennettu!!";
+                        Toast.makeText(Liikunta.this, text, Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
 
 
+                } else {
+                    String text = "Valitse harjoitustyyppi!";
+                    Toast.makeText(Liikunta.this, text, Toast.LENGTH_SHORT).show();
+                }
             }
 
         });
