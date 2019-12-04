@@ -119,21 +119,38 @@ public class Paiva extends Fragment {
         // Liikunta
         do {
             if (tyyppi.contains("kestävyys")) {
-                String[] parts = kesto.get (kesto.size () - 1).split (":");
-                kestavyysluku.setText (parts[0] + "h " + parts[1] + "min");
-            } if (tyyppi.contains("liikkuvuus")) {
-                String[] parts2 = kesto.get (kesto.size () - 1).split (":");
-                liikkuvuusluku.setText (parts2[0] + "h " + parts2[1] + "min");
-            } if (tyyppi.contains ("lihasvoima")) {
-                String[] parts3 = kesto.get (kesto.size () - 1).split (":");
-                lihasvoimaluku.setText (parts3[0] + "h " + parts3[1] + "min");
+                if (tyyppi.get(tyyppi.size () -1).matches ("kestävyys")) {
+                    String[] parts = kesto.get (kesto.size () - 1).split (":");
+                    kestavyysluku.setText (parts[0] + "h " + parts[1] + "min");
+                }
             }
         }
-        while (pvm_tanaan.matches (tanaan) == true && lihasvoimaluku == null && liikkuvuusluku == null && kestavyysluku == null);
+        while (kestavyysluku == null);
+
+        do {
+            if (tyyppi.contains ("liikkuvuus")) {
+                if (tyyppi.get (tyyppi.size () - 1).matches ("liikkuvuus")) {
+                    String[] parts2 = kesto.get (kesto.size () - 1).split (":");
+                    liikkuvuusluku.setText (parts2[0] + "h " + parts2[1] + "min");
+                }
+            }
+        }
+        while (liikkuvuusluku == null);
+
+        do {
+            if (tyyppi.contains ("lihasvoima")) {
+                if (tyyppi.get(tyyppi.size () -1).matches ("lihasvoima")) {
+                    String[] parts3 = kesto.get (kesto.size () - 1).split (":");
+                    lihasvoimaluku.setText (parts3[0] + "h " + parts3[1] + "min");
+                }
+            }
+        }
+        while (lihasvoimaluku == null);
+
         if (pvm_tanaan.matches (tanaan) == false) {
-            kestavyysluku.setText ("-");
-            liikkuvuusluku.setText ("-");
-            lihasvoimaluku.setText ("-");
+            kestavyysluku.setText ("Et ole harjoitellut tänään kestävyyttä");
+            liikkuvuusluku.setText ("Et ole harjoitellut tänään liikkuvuutta");
+            lihasvoimaluku.setText ("Et ole harjoitellut tänään lihasvoimaa");
         }
         String kestavyys123 = tyyppi.get (tyyppi.size () -1);
         Log.d ("viimeinen tyyppi",kestavyys123);

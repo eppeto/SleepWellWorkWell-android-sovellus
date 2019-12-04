@@ -135,5 +135,5 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor cursor_liikunta = db.rawQuery (query, null);
         return  cursor_liikunta;
     }
-
 }
+

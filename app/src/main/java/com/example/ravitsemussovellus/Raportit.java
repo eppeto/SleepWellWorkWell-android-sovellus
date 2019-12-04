@@ -70,6 +70,7 @@ public class Raportit extends AppCompatActivity{
         }
         Log.d ("testi","liikunta id =" + liikunta_id);
         Log.d("pvm = ",pvm.toString ());
+        db.close ();
     }
     // public void LiikuntaHaku() {
     //    db = new DatabaseHelper (this);
