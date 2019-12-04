@@ -117,21 +117,24 @@ public class Paiva extends Fragment {
 
 
         // Liikunta
-        if (pvm_tanaan.matches (tanaan) == true) {
+        do {
 
-            if (tyyppi.get(tyyppi.size() - 1).equals ("kestävyys")) {
-                String[] parts = kesto.get(kesto.size() - 1).split (":");
+            // TÄSSÄ ALLA VIKA
+            if (tyyppi.get (tyyppi.size () - 1).equals ("kestävyys") && (tyyppi.get (tyyppi.size () - 1).equals ("liikkuvuus")) && tyyppi.get (tyyppi.size () - 1).equals ("lihasvoima")) {
+                String[] parts = kesto.get (kesto.size () - 1).split (":");
                 kestavyysluku.setText (parts[0] + "h " + parts[1] + "min");
+                String[] parts2 = kesto.get (kesto.size () - 1).split (":");
+                liikkuvuusluku.setText (parts2[0] + "h " + parts2[1] + "min");
+                String[] parts3 = kesto.get (kesto.size () - 1).split (":");
+                lihasvoimaluku.setText (parts3[0] + "h " + parts3[1] + "min");
+            } else {
+                kestavyysluku.setText ("-");
+                liikkuvuusluku.setText ("-");
+                lihasvoimaluku.setText ("-");
             }
-            else if (tyyppi.get(tyyppi.size() - 1).equals ("liikkuvuus")) {
-                String[] parts = kesto.get(kesto.size() - 1).split (":");
-                liikkuvuusluku.setText (parts[0] + "h " + parts[1] + "min");
-            }
-            else if (tyyppi.get(tyyppi.size() - 1).equals ("lihasvoima")) {
-                String[] parts = kesto.get(kesto.size() - 1).split (":");
-                lihasvoimaluku.setText (parts[0] + "h " + parts[1] + "min");
-            }
-        } else {
+        }
+        while (pvm_tanaan.matches (tanaan) == true && lihasvoimaluku == null && liikkuvuusluku == null && kestavyysluku == null);
+        if (pvm_tanaan.matches (tanaan) == false) {
             kestavyysluku.setText ("-");
             liikkuvuusluku.setText ("-");
             lihasvoimaluku.setText ("-");
@@ -139,7 +142,7 @@ public class Paiva extends Fragment {
 
         Log.d("TESTI",tyyppi.toString ());
         Log.d("KESTO",kesto.toString ());
-        Log.d("pvm =", pvm_tanaan);
+        Log.d("pvm =", pvm.toString ());
         Log.d("tanaan =", tanaan);
         return view;
     }
