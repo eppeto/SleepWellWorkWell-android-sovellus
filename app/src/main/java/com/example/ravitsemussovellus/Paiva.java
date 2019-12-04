@@ -75,7 +75,7 @@ public class Paiva extends Fragment {
             // PÄIVÄMÄÄRÄ OTSIKON MUUTTAMINEN KULUVALLE PÄIVÄMÄÄRÄLLE
         DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         String tanaan = df.format(Calendar.getInstance().getTime());
-        String pvm_tanaan = df.format (pvm);
+        String pvm_tanaan = pvm.get (pvm.size() - 1);
         paivamaaraotsikko.setText(tanaan);
 
             // Unen laadun kuvan muuttaminen
@@ -119,16 +119,16 @@ public class Paiva extends Fragment {
         // Liikunta
         if (pvm_tanaan.matches (tanaan) == true) {
 
-            if (tyyppi.equals ("kestävyys")) {
-                String[] parts = kesto.split (":");
+            if (tyyppi.get(tyyppi.size() - 1).equals ("kestävyys")) {
+                String[] parts = kesto.get(kesto.size() - 1).split (":");
                 kestavyysluku.setText (parts[0] + "h " + parts[1] + "min");
             }
-            if (tyyppi.equals ("liikkuvuus")) {
-                String[] parts = kesto.split (":");
+            else if (tyyppi.get(tyyppi.size() - 1).equals ("liikkuvuus")) {
+                String[] parts = kesto.get(kesto.size() - 1).split (":");
                 liikkuvuusluku.setText (parts[0] + "h " + parts[1] + "min");
             }
-            if (tyyppi.equals ("lihasvoima")) {
-                String[] parts = kesto.split (":");
+            else if (tyyppi.get(tyyppi.size() - 1).equals ("lihasvoima")) {
+                String[] parts = kesto.get(kesto.size() - 1).split (":");
                 lihasvoimaluku.setText (parts[0] + "h " + parts[1] + "min");
             }
         } else {
