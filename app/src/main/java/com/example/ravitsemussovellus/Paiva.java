@@ -118,19 +118,15 @@ public class Paiva extends Fragment {
 
         // Liikunta
         do {
-
-            // TÄSSÄ ALLA VIKA
-            if (tyyppi.get (tyyppi.size () - 1).equals ("kestävyys") && (tyyppi.get (tyyppi.size () - 1).equals ("liikkuvuus")) && tyyppi.get (tyyppi.size () - 1).equals ("lihasvoima")) {
+            if (tyyppi.contains("kestävyys")) {
                 String[] parts = kesto.get (kesto.size () - 1).split (":");
                 kestavyysluku.setText (parts[0] + "h " + parts[1] + "min");
+            } if (tyyppi.contains("liikkuvuus")) {
                 String[] parts2 = kesto.get (kesto.size () - 1).split (":");
                 liikkuvuusluku.setText (parts2[0] + "h " + parts2[1] + "min");
+            } if (tyyppi.contains ("lihasvoima")) {
                 String[] parts3 = kesto.get (kesto.size () - 1).split (":");
                 lihasvoimaluku.setText (parts3[0] + "h " + parts3[1] + "min");
-            } else {
-                kestavyysluku.setText ("-");
-                liikkuvuusluku.setText ("-");
-                lihasvoimaluku.setText ("-");
             }
         }
         while (pvm_tanaan.matches (tanaan) == true && lihasvoimaluku == null && liikkuvuusluku == null && kestavyysluku == null);
@@ -139,7 +135,8 @@ public class Paiva extends Fragment {
             liikkuvuusluku.setText ("-");
             lihasvoimaluku.setText ("-");
         }
-
+        String kestavyys123 = tyyppi.get (tyyppi.size () -1);
+        Log.d ("viimeinen tyyppi",kestavyys123);
         Log.d("TESTI",tyyppi.toString ());
         Log.d("KESTO",kesto.toString ());
         Log.d("pvm =", pvm.toString ());
