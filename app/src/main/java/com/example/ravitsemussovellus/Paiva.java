@@ -75,7 +75,10 @@ public class Paiva extends Fragment {
             // PÄIVÄMÄÄRÄ OTSIKON MUUTTAMINEN KULUVALLE PÄIVÄMÄÄRÄLLE
         DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         String tanaan = df.format(Calendar.getInstance().getTime());
-        String pvm_tanaan = pvm.get (pvm.size() - 1);
+        String pvm_tanaan = null;
+        if(pvm.size()> 0) {
+            pvm_tanaan = pvm.get(pvm.size() - 1);
+        }
         paivamaaraotsikko.setText(tanaan);
 
             // Unen laadun kuvan muuttaminen
@@ -144,18 +147,18 @@ public class Paiva extends Fragment {
                 }
         }
 
-        if (pvm_tanaan.matches (tanaan) == false) {
+        if (pvm_tanaan == null || pvm_tanaan.matches (tanaan) == false) {
             kestavyysluku.setText ("Et ole harjoitellut tänään kestävyyttä");
             liikkuvuusluku.setText ("Et ole harjoitellut tänään liikkuvuutta");
             lihasvoimaluku.setText ("Et ole harjoitellut tänään lihasvoimaa");
         }
-        String kestavyys123 = tyyppi.get (tyyppi.size () -1);
-        Log.d ("viimeinen tyyppi",kestavyys123);
-        Log.d("TESTI",tyyppi.toString ());
-        Log.d("KESTO",kesto.toString ());
-        Log.d("pvm =", pvm.toString ());
-        Log.d("tanaan =", tanaan);
-        Log.d("Tyyppi SIZE", String.valueOf(koko) );
+        //String kestavyys123 = tyyppi.get (tyyppi.size () -1);
+       // Log.d ("viimeinen tyyppi",kestavyys123);
+        //Log.d("TESTI",tyyppi.toString ());
+       // Log.d("KESTO",kesto.toString ());
+        //Log.d("pvm =", pvm.toString ());
+        //Log.d("tanaan =", tanaan);
+        //Log.d("Tyyppi SIZE", String.valueOf(koko) );
         return view;
     }
 
