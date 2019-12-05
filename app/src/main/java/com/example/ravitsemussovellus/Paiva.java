@@ -117,35 +117,32 @@ public class Paiva extends Fragment {
 
 
         // Liikunta
-        do {
-            if (tyyppi.contains("kestävyys")) {
-                if (tyyppi.get(tyyppi.size () -1).matches ("kestävyys")) {
-                    String[] parts = kesto.get (kesto.size () - 1).split (":");
-                    kestavyysluku.setText (parts[0] + "h " + parts[1] + "min");
+        int koko = (tyyppi.size());
+        int koko3 = (tyyppi.size());
+        int koko2 = (kesto.size());
+        for(int i = 0; i<koko3;i++){
+            koko--;
+            koko2--;
+                Log.d("pvm tanaan",pvm_tanaan);
+                if (tyyppi.get(koko).matches("kestävyys") && pvm.get(koko).matches(pvm_tanaan)) {
+                    String[] parts = kesto.get(koko2).split(":");
+                    kestavyysluku.setText(parts[0] + "h " + parts[1] + "min");
                 }
-            }
-        }
-        while (kestavyysluku == null);
 
-        do {
-            if (tyyppi.contains ("liikkuvuus")) {
-                if (tyyppi.get (tyyppi.size () - 1).matches ("liikkuvuus")) {
-                    String[] parts2 = kesto.get (kesto.size () - 1).split (":");
-                    liikkuvuusluku.setText (parts2[0] + "h " + parts2[1] + "min");
-                }
-            }
-        }
-        while (liikkuvuusluku == null);
 
-        do {
-            if (tyyppi.contains ("lihasvoima")) {
-                if (tyyppi.get(tyyppi.size () -1).matches ("lihasvoima")) {
-                    String[] parts3 = kesto.get (kesto.size () - 1).split (":");
-                    lihasvoimaluku.setText (parts3[0] + "h " + parts3[1] + "min");
+
+                if (tyyppi.get(koko).matches("liikkuvuus") && pvm.get(koko).matches(pvm_tanaan)) {
+                    String[] parts2 = kesto.get(koko2).split(":");
+                    liikkuvuusluku.setText(parts2[0] + "h " + parts2[1] + "min");
                 }
-            }
+
+
+
+                if (tyyppi.get(koko).matches("lihasvoima") && pvm.get(koko).matches(pvm_tanaan)) {
+                    String[] parts3 = kesto.get(koko2).split(":");
+                    lihasvoimaluku.setText(parts3[0] + "h " + parts3[1] + "min");
+                }
         }
-        while (lihasvoimaluku == null);
 
         if (pvm_tanaan.matches (tanaan) == false) {
             kestavyysluku.setText ("Et ole harjoitellut tänään kestävyyttä");
@@ -158,6 +155,7 @@ public class Paiva extends Fragment {
         Log.d("KESTO",kesto.toString ());
         Log.d("pvm =", pvm.toString ());
         Log.d("tanaan =", tanaan);
+        Log.d("Tyyppi SIZE", String.valueOf(koko) );
         return view;
     }
 
