@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.SimpleDateFormat;
+import java.time.Month;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -49,6 +50,7 @@ public class Liikunta extends AppCompatActivity {
 
         //datepicker
         SimpleDateFormat currentDate = new SimpleDateFormat("dd-MM-yyyy");
+
         Date todayDate = new Date();
         String thisDate = currentDate.format(todayDate);
         textDateSport.setText(thisDate);
@@ -62,14 +64,16 @@ public class Liikunta extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker view, int year, int monthOfYear,
                                           int dayOfMonth) {
+                        String day = dayOfMonth < 10 ? "0" + dayOfMonth : dayOfMonth + "";
 
-                        int s = monthOfYear + 1;
-                        String a = dayOfMonth + "-"+ s +"-"+ year;
+                        String s = monthOfYear < 10 ? "0" + (monthOfYear +1): (monthOfYear +1) + "";
+                        String a =  day + "-" + s + "-" + year;
                         textDateSport.setText(a);
                     }
                 };
                 // Määritellään nykyhetki + min ja max päivät
                 final Calendar c = Calendar.getInstance();
+
                 year=c.get(Calendar.YEAR);
                 month=c.get(Calendar.MONTH);
                 day=c.get(Calendar.DAY_OF_MONTH);

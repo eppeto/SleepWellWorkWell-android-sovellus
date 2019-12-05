@@ -60,9 +60,10 @@ public class UniStressi extends AppCompatActivity {
                     @Override
                     public void onDateSet(DatePicker view, int year, int monthOfYear,
                                           int dayOfMonth) {
+                        String day = dayOfMonth < 10 ? "0" + dayOfMonth : dayOfMonth + "";
 
-                        int s = monthOfYear + 1;
-                        String a = dayOfMonth + "-"+ s +"-"+ year;
+                        String s = monthOfYear < 10 ? "0" + (monthOfYear +1): (monthOfYear +1) + "";
+                        String a =  day + "-" + s + "-" + year;
                         textDateUni.setText(a);
                     }
                 };
