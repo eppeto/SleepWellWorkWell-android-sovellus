@@ -95,7 +95,7 @@ public class Viikko extends Fragment implements SearchView.OnQueryTextListener {
     public List<String> kesto = new ArrayList<String> ();
 
     public int ruokailu_id;
-    public int maara_ruoka;
+    public List<Integer> maara_ruoka = new ArrayList<Integer>();
     public List<String> pvm_ruoka = new ArrayList<String>();
     public List<String> kello_ruoka = new ArrayList<String>();
 

@@ -30,7 +30,7 @@ public class Raportit extends AppCompatActivity{
     public List<String> kesto = new ArrayList<String> ();
 
     public int ruokailu_id;
-    public int maara_ruoka;
+    public List<Integer> maara_ruoka = new ArrayList<Integer>();
     public List<String> pvm_ruoka = new ArrayList<String>();
     public List<String> kello_ruoka = new ArrayList<String>();
 
@@ -133,7 +133,7 @@ public class Raportit extends AppCompatActivity{
             while(!res.isAfterLast ()){
                 ruokailu_id = res.getInt (0);
                 pvm_ruoka.add (res.getString (1));
-                maara_ruoka = res.getInt (2);
+                maara_ruoka.add (res.getInt (2));
                 kello_ruoka.add (res.getString (3));
                 res.moveToNext ();
             }

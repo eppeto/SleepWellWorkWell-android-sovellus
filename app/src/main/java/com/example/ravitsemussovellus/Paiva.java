@@ -27,7 +27,7 @@ public class Paiva extends Fragment {
     public List<String> kesto = new ArrayList<String> ();
 
     public int ruokailu_id;
-    public int maara_ruoka;
+    public List<Integer> maara_ruoka = new ArrayList<Integer>();
     public List<String> pvm_ruoka = new ArrayList<String>();
     public List<String> kello_ruoka = new ArrayList<String>();
 
@@ -106,28 +106,39 @@ public class Paiva extends Fragment {
         // Ruokalun lukujen ja kuvan muuttaminen
 
         //marjojen määrä
-        marjamaara.setText(String.valueOf(maara_ruoka));
-        if (maara_ruoka > 4){
+        int marjakoko = maara_ruoka.size();
+        int laskuri = 0;
+        for (int k = 0; k < maara_ruoka.size(); k++){
+            marjakoko--;
+            if (pvm_ruoka.get(marjakoko).matches(pvm_tanaan)){
+                Log.d("marjojen määrä ennen lisäystä:",String.valueOf(laskuri));
+                laskuri = laskuri + maara_ruoka.get(marjakoko);
+                Log.d("marjojen määrä lisäyksen jälkeen:",String.valueOf(laskuri));
+            }
+        }
+        marjamaara.setText(String.valueOf(laskuri));
+        if (laskuri > 4){
             marjamaarakuva.setImageResource(R.drawable.good);
+            Log.d("meneekö tähän","unikuva hyvä!");
         }
-        if (maara_ruoka < 5 && maara_ruoka > 1 ){
+        if (laskuri < 5 && laskuri > 1 ){
             marjamaarakuva.setImageResource(R.drawable.neutral);
+            Log.d("meneekö tähän","unikuva neutraali!");
         }
-        if (maara_ruoka < 2){
+        if (laskuri < 2){
             marjamaarakuva.setImageResource(R.drawable.bad);
+            Log.d("meneekö tähän","unikuva paska!");
         }
         // TÄHÄN MARJOJEN YHTEISMÄÄRÄN LASKEMINEN JA SIJOITUS
         int ruokakoko = (pvm_ruoka.size());
         int ruokailujenmaara = 0;
+            ruokamaara.setText("Et ole kirjannut ruokailua tänään");
         for (int j = 0; j < pvm_ruoka.size (); j++){
             ruokakoko--;
             if (pvm_ruoka.get(ruokakoko).matches(pvm_tanaan)){
                 ruokailujenmaara++;
                 Log.d("ruokailujen lukumäärä:",String.valueOf(ruokailujenmaara));
                 ruokamaara.setText(String.valueOf(ruokailujenmaara));
-            }
-            else {
-                ruokamaara.setText("Et ole kirjannut ruokailua tänään");
             }
 
         }
