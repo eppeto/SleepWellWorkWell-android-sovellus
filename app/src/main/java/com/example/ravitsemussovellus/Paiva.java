@@ -82,24 +82,24 @@ public class Paiva extends Fragment {
         paivamaaraotsikko.setText(tanaan);
 
             // Unen laadun kuvan muuttaminen
-        if (unilaatu == "RbtnErinUni"){
+        if (unilaatu.matches ( "RbtnErinUni")){
             unenlaatu.setImageResource(R.drawable.good);
         }
-        if (unilaatu == "RbtnHyvaUni"){
+        if (unilaatu.matches ( "RbtnHyvaUni")){
             unenlaatu.setImageResource(R.drawable.neutral);
         }
-        if (unilaatu == "RbtnHuonoUni"){
+        if (unilaatu.matches ("RbtnHuonoUni")){
             unenlaatu.setImageResource(R.drawable.bad);
         }
 
             // Stressinmäärän kuvan muuttaminen
-        if (stressi == "RbtnErinStressi"){
+        if (stressi.matches ("RbtnErinStressi")){
             stressimaara.setImageResource(R.drawable.good);
         }
-        if (stressi == "RbtnHyvaStressi"){
+        if (stressi.matches ("RbtnHyvaStressi")){
             stressimaara.setImageResource(R.drawable.neutral);
         }
-        if (stressi == "RbtnHuonoStressi"){
+        if (stressi.matches ("RbtnHuonoStressi")){
             stressimaara.setImageResource(R.drawable.bad);
         }
 
