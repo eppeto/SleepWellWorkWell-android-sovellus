@@ -30,19 +30,81 @@ public class UniStressi extends AppCompatActivity {
     int year;
     int month;
     int day;
+    String UniLaatu;
+    String StressiLaatu;
+    RadioButton ErinUniRadioButton;
+    RadioButton HyvaUniRadioButton;
+    RadioButton HuonoUniRadioButton;
+    RadioButton ErinStressiRadioButton;
+    RadioButton HyvaStressiRadioButton;
+    RadioButton HuonoStressiRadioButton;
+
+    public void onRadioButtonClicked(View view) {
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Valitaan mikä UNI nappi on valittu
+        switch (view.getId ()) {
+            case R.id.RbtnErinUni:
+                // Erinomainen uni valittu
+                if (checked) {
+                    UniLaatu = "RbtnErinUni";
+                }
+                break;
+            case R.id.RbtnHyvaUni:
+                // Hyvä uni valittu
+                if (checked) {
+                    UniLaatu = "RbtnHyvaUni";
+                }
+                break;
+            case R.id.RbtnHuonoUni:
+                // Huono uni valittu
+                if (checked) {
+                    UniLaatu = "RbtnHuonoUni";
+                }
+                break;
+        }
+        // Valitaan mikä UNI nappi on valittu
+        switch (view.getId ()) {
+            case R.id.RbtnErinStressi:
+                // Erinomainen stressi valittu
+                if (checked) {
+                    StressiLaatu = "RbtnErinStressi";
+                }
+                break;
+            case R.id.RbtnHyvaStressi:
+                // Hyvä stressi valittu
+                if (checked) {
+                    StressiLaatu = "RbtnHyvaStressi";
+                }
+                break;
+            case R.id.RbtnHuonoStressi:
+                // Huono stressi valittu
+                if (checked) {
+                    StressiLaatu = "RbtnHuonoStressi";
+                }
+                break;
+        }
+
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.unistressi);
         db = new DatabaseHelper(this);
-
         btnVaihdaUni=findViewById(R.id.btnVaihdaUni);
         textDateUni=findViewById(R.id.textDateUni);
         btnUniTallenna = findViewById(R.id.btnUniTallenna);
         radioGroup = findViewById(R.id.radioGroupUni);
         radioGroup2 = findViewById(R.id.radioGroupStressi);
         btnUniBack=findViewById(R.id.btnUniBack);
+        ErinUniRadioButton = findViewById(R.id.RbtnErinUni);
+        HyvaUniRadioButton = findViewById(R.id.RbtnHyvaUni);
+        HuonoUniRadioButton = findViewById(R.id.RbtnHuonoUni);
+        ErinStressiRadioButton = findViewById(R.id.RbtnErinStressi);
+        HyvaStressiRadioButton = findViewById(R.id.RbtnHyvaStressi);
+        HuonoStressiRadioButton = findViewById(R.id.RbtnHuonoStressi);
 
 
         //datepicker
@@ -86,15 +148,14 @@ public class UniStressi extends AppCompatActivity {
         btnUniTallenna.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*int radioId=radioGroup.getCheckedRadioButtonId();
-
-                radioButton = findViewById(radioId);*/
                 if (radioGroup.getCheckedRadioButtonId() == -1 || radioGroup2.getCheckedRadioButtonId() == -1) {
                     String text = "Valitse uni- ja stressitiedot!";
                     Toast.makeText(UniStressi.this, text, Toast.LENGTH_SHORT).show();
-                } else{
+                }
+                else{
+
                     // Databaseen vienti
-                    boolean isInserted = db.insertData_unistressi(String.valueOf (radioGroup.getCheckedRadioButtonId ()), String.valueOf (radioGroup2.getCheckedRadioButtonId()), textDateUni.getText().toString());
+                    boolean isInserted = db.insertData_unistressi(UniLaatu, StressiLaatu, textDateUni.getText().toString());
                     if (isInserted = true) {
                         String text = "Tiedot Tallennettu";
                         Toast.makeText(UniStressi.this, text, Toast.LENGTH_SHORT).show();
@@ -123,6 +184,7 @@ public class UniStressi extends AppCompatActivity {
     String dateTime = simpleDateFormat.format(calendar.getTime());
 
     }
+
     public void checkButton (View v){
         int radioId=radioGroup.getCheckedRadioButtonId();
 
