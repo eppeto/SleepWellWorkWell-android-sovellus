@@ -94,7 +94,7 @@ public class UniStressi extends AppCompatActivity {
                     Toast.makeText(UniStressi.this, text, Toast.LENGTH_SHORT).show();
                 } else{
                     // Databaseen vienti
-                    boolean isInserted = db.insertData_unistressi(radioGroup.getCheckedRadioButtonId(), radioGroup2.getCheckedRadioButtonId(), textDateUni.getText().toString());
+                    boolean isInserted = db.insertData_unistressi(String.valueOf (radioGroup.getCheckedRadioButtonId ()), String.valueOf (radioGroup2.getCheckedRadioButtonId()), textDateUni.getText().toString());
                     if (isInserted = true) {
                         String text = "Tiedot Tallennettu";
                         Toast.makeText(UniStressi.this, text, Toast.LENGTH_SHORT).show();

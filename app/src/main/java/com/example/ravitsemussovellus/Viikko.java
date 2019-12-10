@@ -100,8 +100,8 @@ public class Viikko extends Fragment implements SearchView.OnQueryTextListener {
     public List<String> kello_ruoka = new ArrayList<String>();
 
     public int unistressi_id;
-    public int unilaatu;
-    public int stressi;
+    public String unilaatu;
+    public String stressi;
     public Date pvm_unistressi;
 
     LineChart lineChart;

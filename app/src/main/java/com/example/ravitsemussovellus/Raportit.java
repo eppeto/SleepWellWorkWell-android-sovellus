@@ -35,8 +35,8 @@ public class Raportit extends AppCompatActivity{
     public List<String> kello_ruoka = new ArrayList<String>();
 
     public int unistressi_id;
-    public int unilaatu;
-    public int stressi;
+    public String unilaatu;
+    public String stressi;
     public Date pvm_unistressi;
 
 
@@ -155,8 +155,8 @@ public class Raportit extends AppCompatActivity{
         else{
             while(res.moveToNext ()){
                 unistressi_id = res.getInt (0);
-                unilaatu = res.getInt (1);
-                stressi = res.getInt (2);
+                unilaatu = res.getString (1);
+                stressi = res.getString (2);
                 try {
                     pvm_unistressi = formatter1.parse (res.getString (3));
                 } catch (ParseException e) {

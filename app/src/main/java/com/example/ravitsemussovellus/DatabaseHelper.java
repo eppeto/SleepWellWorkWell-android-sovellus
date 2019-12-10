@@ -49,7 +49,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + TABLE_LIIKUNTA_NAME +" (LIIKUNTA_ID INTEGER PRIMARY KEY AUTOINCREMENT,TYYPPI STRING,PVM DATETIME,KESTO DATETIME)");
         db.execSQL("create table " + TABLE_RUOKA_NAME +" (RUOKAILU_ID INTEGER PRIMARY KEY AUTOINCREMENT,PVM DATETIME,MAARA INTEGER,KELLO DATETIME)");
-        db.execSQL("create table " + TABLE_UNISTRESSI_NAME +" (UNISTRESSI_ID INTEGER PRIMARY KEY AUTOINCREMENT,UNI_LAATU_ID INTEGER,STRESSI_MAARA_ID INTEGER,PVM DATETIME)");
+        db.execSQL("create table " + TABLE_UNISTRESSI_NAME +" (UNISTRESSI_ID INTEGER PRIMARY KEY AUTOINCREMENT,UNI_LAATU_ID STRING,STRESSI_MAARA_ID STRING,PVM DATETIME)");
 
        // db.execSQL("INSERT INTO " + TABLE_LIIKUNTA_NAME + "(TYYPPI,PVM,KESTO) VALUES (insertData_liikunta(tyyppi),insertData_liikunta(pvm),insertData_liikunta(kesto))");
 
@@ -94,7 +94,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
         // Uni ja stressi tietojen lisäys tietokantaan
-    public boolean insertData_unistressi(int unilaatu, int stressi, String pvm) {
+    public boolean insertData_unistressi(String unilaatu, String stressi, String pvm) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_2_UNISTRESSI, unilaatu);

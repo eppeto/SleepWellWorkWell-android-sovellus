@@ -32,8 +32,8 @@ public class Paiva extends Fragment {
     public List<String> kello_ruoka = new ArrayList<String>();
 
     public int unistressi_id;
-    public int unilaatu;
-    public int stressi;
+    public String unilaatu;
+    public String stressi;
     public Date pvm_unistressi;
 
     @Override
@@ -64,13 +64,13 @@ public class Paiva extends Fragment {
 
 
         // Unen ja stressinmäärän kuvien muuttaminen
-        // unenlaatu erinomainen = 2131296262
-        // unenlaatu hyvä = 2131296266
-        // unenlaatu huono = 2131296264
+        // unenlaatu erinomainen = 2131296262 1
+        // unenlaatu hyvä = 2131296266 2
+        // unenlaatu huono = 2131296264 3
 
-        // stressinmäärä ei ollenkaan = 2131296261
-        // stressinmäärä sopiva = 2131296265
-        // stressinmäärä liikaa = 2131296263
+        // stressinmäärä ei ollenkaan = 2131296261 1
+        // stressinmäärä sopiva = 2131296265 2
+        // stressinmäärä liikaa = 2131296263 3
 
             // PÄIVÄMÄÄRÄ OTSIKON MUUTTAMINEN KULUVALLE PÄIVÄMÄÄRÄLLE
         DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
@@ -82,24 +82,24 @@ public class Paiva extends Fragment {
         paivamaaraotsikko.setText(tanaan);
 
             // Unen laadun kuvan muuttaminen
-        if (unilaatu == 2131296262){
+        if (unilaatu == "RbtnErinUni"){
             unenlaatu.setImageResource(R.drawable.good);
         }
-        if (unilaatu == 2131296266 ){
+        if (unilaatu == "RbtnHyvaUni"){
             unenlaatu.setImageResource(R.drawable.neutral);
         }
-        if (unilaatu == 2131296264 ){
+        if (unilaatu == "RbtnHuonoUni"){
             unenlaatu.setImageResource(R.drawable.bad);
         }
 
             // Stressinmäärän kuvan muuttaminen
-        if (stressi == 2131296261 ){
+        if (stressi == "RbtnErinStressi"){
             stressimaara.setImageResource(R.drawable.good);
         }
-        if (stressi == 2131296265 ){
+        if (stressi == "RbtnHyvaStressi"){
             stressimaara.setImageResource(R.drawable.neutral);
         }
-        if (stressi == 2131296263 ){
+        if (stressi == "RbtnHuonoStressi"){
             stressimaara.setImageResource(R.drawable.bad);
         }
 
@@ -119,15 +119,19 @@ public class Paiva extends Fragment {
         // TÄHÄN MARJOJEN YHTEISMÄÄRÄN LASKEMINEN JA SIJOITUS
         int ruokakoko = (pvm_ruoka.size());
         int ruokailujenmaara = 0;
-        for (int j = 0; j<ruokakoko; j++){
+        for (int j = 0; j < pvm_ruoka.size (); j++){
             ruokakoko--;
             if (pvm_ruoka.get(ruokakoko).matches(pvm_tanaan)){
-                ruokailujenmaara = ruokailujenmaara + 1;
+                ruokailujenmaara++;
                 Log.d("ruokailujen lukumäärä:",String.valueOf(ruokailujenmaara));
+                ruokamaara.setText(String.valueOf(ruokailujenmaara));
+            }
+            else {
+                ruokamaara.setText("Et ole kirjannut ruokailua tänään");
             }
 
         }
-        ruokamaara.setText(String.valueOf(ruokailujenmaara));
+        //ruokamaara.setText(String.valueOf(ruokailujenmaara));
 
         // Liikunta
         int koko = (tyyppi.size());
