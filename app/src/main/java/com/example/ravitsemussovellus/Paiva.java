@@ -29,7 +29,7 @@ public class Paiva extends Fragment {
     public int ruokailu_id;
     public int maara_ruoka;
     public Date pvm_ruoka;
-    public String kello_ruoka;
+    public List<String> kello_ruoka = new ArrayList<String>();
 
     public int unistressi_id;
     public int unilaatu;

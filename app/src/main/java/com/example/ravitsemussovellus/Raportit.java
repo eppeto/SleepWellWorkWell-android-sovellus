@@ -30,7 +30,7 @@ public class Raportit extends AppCompatActivity{
     public int ruokailu_id;
     public int maara_ruoka;
     public Date pvm_ruoka;
-    public String kello_ruoka;
+    public List<String> kello_ruoka = new ArrayList<String>();
 
     public int unistressi_id;
     public int unilaatu;
@@ -127,7 +127,8 @@ public class Raportit extends AppCompatActivity{
             return;
         }
         else{
-            while(res.moveToNext ()){
+            res.moveToFirst ();
+            while(!res.isAfterLast ()){
                 ruokailu_id = res.getInt (0);
                 try {
                     pvm_ruoka = formatter1.parse (res.getString (1));
@@ -135,8 +136,11 @@ public class Raportit extends AppCompatActivity{
                     e.printStackTrace ();
                 }
                 maara_ruoka = res.getInt (2);
-                kello_ruoka = res.getString (3);
+                kello_ruoka.add (res.getString (3));
+                res.moveToNext ();
             }
+            res.close ();
+
         }
 
 
