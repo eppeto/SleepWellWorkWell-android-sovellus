@@ -147,11 +147,11 @@ public class Paiva extends Fragment {
             }
         }
 
-        if (pvm_tanaan == null || pvm_tanaan.matches (tanaan) == false) {
-            kestavyysluku.setText ("Et ole harjoitellut tänään kestävyyttä");
-            liikkuvuusluku.setText ("Et ole harjoitellut tänään liikkuvuutta");
-            lihasvoimaluku.setText ("Et ole harjoitellut tänään lihasvoimaa");
-        }
+        //if (pvm_tanaan == null || pvm_tanaan.matches (tanaan) == false) {
+            //kestavyysluku.setText ("Et ole harjoitellut tänään kestävyyttä");
+            //liikkuvuusluku.setText ("Et ole harjoitellut tänään liikkuvuutta");
+            //lihasvoimaluku.setText ("Et ole harjoitellut tänään lihasvoimaa");
+        //}
         //String kestavyys123 = tyyppi.get (tyyppi.size () -1);
        // Log.d ("viimeinen tyyppi",kestavyys123);
         //Log.d("TESTI",tyyppi.toString ());
