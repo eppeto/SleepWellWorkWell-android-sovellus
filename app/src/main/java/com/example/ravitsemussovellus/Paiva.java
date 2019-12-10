@@ -123,15 +123,15 @@ public class Paiva extends Fragment {
         int koko = (tyyppi.size());
         int koko3 = (tyyppi.size());
         int koko2 = (kesto.size());
-        for(int i = 0; i<koko3;i++){
+        for(int i = 0; i<koko3;i++) {
             koko--;
             koko2--;
-                Log.d("pvm tanaan",pvm_tanaan);
+            Log.d("pvm tanaan", pvm_tanaan);
+            if (tyyppi.get(koko) != null && pvm.get(koko) != null) {
                 if (tyyppi.get(koko).matches("kestävyys") && pvm.get(koko).matches(pvm_tanaan)) {
                     String[] parts = kesto.get(koko2).split(":");
                     kestavyysluku.setText(parts[0] + "h " + parts[1] + "min");
                 }
-
 
 
                 if (tyyppi.get(koko).matches("liikkuvuus") && pvm.get(koko).matches(pvm_tanaan)) {
@@ -140,11 +140,11 @@ public class Paiva extends Fragment {
                 }
 
 
-
                 if (tyyppi.get(koko).matches("lihasvoima") && pvm.get(koko).matches(pvm_tanaan)) {
                     String[] parts3 = kesto.get(koko2).split(":");
                     lihasvoimaluku.setText(parts3[0] + "h " + parts3[1] + "min");
                 }
+            }
         }
 
         if (pvm_tanaan == null || pvm_tanaan.matches (tanaan) == false) {
