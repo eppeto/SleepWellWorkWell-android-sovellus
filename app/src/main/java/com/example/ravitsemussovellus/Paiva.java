@@ -117,7 +117,17 @@ public class Paiva extends Fragment {
             marjamaarakuva.setImageResource(R.drawable.bad);
         }
         // TÄHÄN MARJOJEN YHTEISMÄÄRÄN LASKEMINEN JA SIJOITUS
+        int ruokakoko = (pvm_ruoka.size());
+        int ruokailujenmaara = 0;
+        for (int j = 0; j<ruokakoko; j++){
+            ruokakoko--;
+            if (pvm_ruoka.get(ruokakoko).matches(pvm_tanaan)){
+                ruokailujenmaara = ruokailujenmaara + 1;
+                Log.d("ruokailujen lukumäärä:",String.valueOf(ruokailujenmaara));
+            }
 
+        }
+        ruokamaara.setText(String.valueOf(ruokailujenmaara));
 
         // Liikunta
         int koko = (tyyppi.size());
