@@ -23,7 +23,7 @@ class Adapter extends FragmentStatePagerAdapter {
 
     public int ruokailu_id;
     public int maara_ruoka;
-    public Date pvm_ruoka;
+    public List<String> pvm_ruoka = new ArrayList<String>();
     public List<String> kello_ruoka = new ArrayList<String>();
 
     public int unistressi_id;

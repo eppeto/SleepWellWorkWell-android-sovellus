@@ -17,7 +17,9 @@ import java.util.List;
 
 public class Raportit extends AppCompatActivity{
     DatabaseHelper db;
+
     SimpleDateFormat formatter1 = new SimpleDateFormat ("dd-MM-yyyy");
+
     //    Kellonaikaparsija alla (ei välttämättä tarvita)
     //    DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern ("HH:mm");
 
@@ -29,7 +31,7 @@ public class Raportit extends AppCompatActivity{
 
     public int ruokailu_id;
     public int maara_ruoka;
-    public Date pvm_ruoka;
+    public List<String> pvm_ruoka = new ArrayList<String>();
     public List<String> kello_ruoka = new ArrayList<String>();
 
     public int unistressi_id;
@@ -130,11 +132,7 @@ public class Raportit extends AppCompatActivity{
             res.moveToFirst ();
             while(!res.isAfterLast ()){
                 ruokailu_id = res.getInt (0);
-                try {
-                    pvm_ruoka = formatter1.parse (res.getString (1));
-                } catch (ParseException e) {
-                    e.printStackTrace ();
-                }
+                pvm_ruoka.add (res.getString (1));
                 maara_ruoka = res.getInt (2);
                 kello_ruoka.add (res.getString (3));
                 res.moveToNext ();
