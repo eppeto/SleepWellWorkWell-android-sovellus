@@ -225,45 +225,46 @@
             android:src="@color/white" />
         </RelativeLayout>
     </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        // Ruokailujen väli teksti
-        <RelativeLayout
-            android:layout_width="wrap_content"
+    <!--
+        <TableRow
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
+            // Ruokailujen väli teksti
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/ruokailuvali"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:text="Ruokailujen väli"
-            android:textColor="@color/black"
-            android:textSize="15dp"
-            android:typeface="monospace" />
-        // Ruokailujen väli aika (VAIHTUVA)
+            <TextView
+                android:id="@+id/ruokailuvali"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="Ruokailujen väli"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:typeface="monospace" />
+            // Ruokailujen väli aika (VAIHTUVA)
 
-        <TextView
-            android:id="@+id/ruokailuvaliLuku"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text=""
-            android:textColor="@color/black"
-            android:textSize="15dp"
-            android:typeface="monospace" />
-        // Ruokailujen väli hymiö (VAIHTUVA)
+            <TextView
+                android:id="@+id/ruokailuvaliLuku"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:typeface="monospace" />
+            // Ruokailujen väli hymiö (VAIHTUVA)
 
-        <ImageView
-            android:id="@+id/ruokailuvaliKuva"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:src="@color/white" />
-        </RelativeLayout>
-    </TableRow>
+            <ImageView
+                android:id="@+id/ruokailuvaliKuva"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@color/white" />
+            </RelativeLayout>
+        </TableRow>
+        -->
 
     <Space
         android:layout_width="wrap_content"
@@ -295,51 +296,20 @@
             android:gravity="center"/>
     </TableRow>
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        // Liikunnan yhteiskesto teksti
-
-        <TextView
-            android:id="@+id/liikuntamaara"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Liikunnan yhteiskesto"
-            android:textColor="@color/black"
-            android:textSize="15dp"
-            android:typeface="monospace" />
-        // Liikunnan yhteiskesto luku (VAIHTUVA)
-
-        <TextView
-            android:id="@+id/liikuntamaaraLuku"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text=""
-            android:textColor="@color/black"
-            android:textSize="15dp"
-            android:typeface="monospace" />
-        // Liikunnan yhteiskesto hymiö (VAIHTUVA)
-
-        <ImageView
-            android:id="@+id/liikuntamaaraKuva"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@color/white" />
-
-
-    </TableRow>
 
     <TableRow
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
         // Kestävyys teksti
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/kestavyysTeksti"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_alignParentLeft="true"
             android:text="Kestävyys"
             android:textColor="@color/black"
             android:textSize="15dp"
@@ -350,23 +320,27 @@
             android:id="@+id/kestavyysLuku"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            android:layout_alignParentRight="true"
             android:text="Ei harjoituksia tänään"
             android:textColor="@color/black"
             android:textSize="15dp"
             android:typeface="monospace" />
+        </RelativeLayout>
     </TableRow>
 
     <TableRow
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
         // Lihasvoima teksti
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/lihasvoimaTeksti"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_alignParentLeft="true"
             android:text="Lihasvoima"
             android:textColor="@color/black"
             android:textSize="15dp"
@@ -377,23 +351,27 @@
             android:id="@+id/lihasvoimaLuku"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            android:layout_alignParentRight="true"
             android:text="Ei harjoituksia tänään"
             android:textColor="@color/black"
             android:textSize="15dp"
             android:typeface="monospace" />
+        </RelativeLayout>
     </TableRow>
 
     <TableRow
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
         // Liikkuvuus teksti
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/liikkuvuusTeksti"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_alignParentLeft="true"
             android:text="Liikkuvuus"
             android:textColor="@color/black"
             android:textSize="15dp"
@@ -404,10 +382,11 @@
             android:id="@+id/liikkuvuusLuku"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            android:layout_alignParentRight="true"
             android:text="Ei harjoituksia tänään"
             android:textColor="@color/black"
             android:textSize="15dp"
             android:typeface="monospace" />
+        </RelativeLayout>
     </TableRow>
 </TableLayout></RelativeLayout>

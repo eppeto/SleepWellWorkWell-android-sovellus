@@ -51,12 +51,10 @@ public class Paiva extends Fragment {
         ImageView ruokamaarakuva = (ImageView) view.findViewById(R.id.ruokamaarakuva);
         TextView marjamaara = (TextView) view.findViewById(R.id.marjamaaraLuku);
         ImageView marjamaarakuva = (ImageView) view.findViewById(R.id.marjakuva);
-        TextView ruokavaliluku = (TextView) view.findViewById(R.id.ruokailuvaliLuku);
-        ImageView ruokavalikuva = (ImageView) view.findViewById(R.id.ruokailuvaliKuva);
+        //TextView ruokavaliluku = (TextView) view.findViewById(R.id.ruokailuvaliLuku);
+        //ImageView ruokavalikuva = (ImageView) view.findViewById(R.id.ruokailuvaliKuva);
 
         // Liikunnan kuvat ja tekstit
-        TextView liikunnanyhteiskestoluku = (TextView) view.findViewById(R.id.liikuntamaaraLuku);
-        ImageView liikunnanyhteiskestokuva = (ImageView) view.findViewById(R.id.liikuntamaaraKuva);
         TextView kestavyysluku = (TextView) view.findViewById(R.id.kestavyysLuku);
         TextView liikkuvuusluku = (TextView) view.findViewById(R.id.liikkuvuusLuku);
         TextView lihasvoimaluku = (TextView) view.findViewById(R.id.lihasvoimaLuku);
